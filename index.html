@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Everts. Onderhoud &amp; Renovatie</title>
+<link rel="icon" type="image/png" href="assets/everts-beeldmerk.png">
+<link rel="stylesheet" href="colors_and_type.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<style>
+  html, body { margin: 0; background: var(--bg1); }
+  body { font-family: var(--font-body); color: var(--fg2); }
+  * { box-sizing: border-box; }
+  a { color: var(--everts-green); }
+  img { max-width: 100%; }
+  .evt-show-sm { display: none; }
+
+  @media (max-width: 900px) {
+    .evt-nav-desktop, .evt-cta-desktop { display: none !important; }
+    .evt-nav-burger { display: flex !important; }
+    .evt-grid-4 { grid-template-columns: repeat(2, 1fr) !important; gap: 32px !important; }
+    .evt-values, .evt-2col, .evt-detail { grid-template-columns: 1fr !important; gap: 40px !important; }
+    .evt-detail aside { position: static !important; }
+    .evt-dienst { grid-template-columns: 1fr !important; gap: 24px !important; }
+    .evt-footer-grid { grid-template-columns: 1fr 1fr !important; gap: 32px !important; }
+  }
+  @media (max-width: 600px) {
+    .evt-grid-4 { grid-template-columns: 1fr !important; }
+    .evt-footer-grid { grid-template-columns: 1fr !important; }
+    .evt-2col-form { grid-template-columns: 1fr !important; }
+    .evt-hide-sm { display: none !important; }
+    .evt-show-sm { display: inline-flex !important; }
+  }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel" src="js/Components.jsx"></script>
+<script type="text/babel" src="js/Chrome.jsx"></script>
+<script type="text/babel" src="js/Home.jsx"></script>
+<script type="text/babel" src="js/Pages.jsx"></script>
+<script type="text/babel" src="js/Vacatures.jsx"></script>
+<script type="text/babel">
+  const { useState, useEffect } = React;
+
+  function App() {
+    const [route, setRoute] = useState({ page: 'home', slug: null });
+    const nav = (page, slug = null) => { setRoute({ page, slug }); window.scrollTo({ top: 0 }); };
+    useEffect(() => { if (window.lucide) window.lucide.createIcons(); });
+
+    let view;
+    switch (route.page) {
+      case 'over': view = <Over />; break;
+      case 'diensten': view = <Diensten />; break;
+      case 'werken': view = <Werken onNav={nav} />; break;
+      case 'vacature': view = <VacatureDetail slug={route.slug} onNav={nav} />; break;
+      case 'solliciteren': view = <Solliciteren slug={route.slug} onNav={nav} />; break;
+      case 'contact': view = <Contact />; break;
+      default: view = <Home onNav={nav} />;
+    }
+
+    // top-nav highlight: vacancy/apply pages count as "werken"
+    const current = ['vacature', 'solliciteren'].includes(route.page) ? 'werken' : route.page;
+
+    return (
+      <React.Fragment>
+        <Header current={current} onNav={nav} />
+        {view}
+        <Footer onNav={nav} />
+      </React.Fragment>
+    );
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
+</body>
+</html>
