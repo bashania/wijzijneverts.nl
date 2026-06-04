@@ -245,6 +245,8 @@ function Solliciteren({ slug, onNav }) {
   const v = slug === 'open' ? null : findVacature(slug);
   const titel = v ? v.t : 'Open sollicitatie';
   const [sent, setSent] = useState(false);
+  const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [fileName, setFileName] = useState('');
 
   if (sent) return (
@@ -267,17 +269,29 @@ function Solliciteren({ slug, onNav }) {
       <section style={{ background: '#fff' }}>
         <div style={{ maxWidth: 720, margin: '0 auto', padding: '56px clamp(20px,4vw,32px) 88px' }}>
           <a href="#" onClick={(e) => { e.preventDefault(); onNav(v ? 'vacature' : 'werken', v ? v.slug : null); }} style={{ display: 'inline-flex', alignItems: 'center', gap: 7, fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: 14, color: 'var(--everts-green)', textDecoration: 'none', marginBottom: 28 }}><Icon name="arrow-left" size={16} /> Terug</a>
-          <form onSubmit={(e) => { e.preventDefault(); setSent(true); window.scrollTo({ top: 0 }); }}
+          <form onSubmit={async (e) => {
+              e.preventDefault();
+              setLoading(true); setError(false);
+              try {
+                const res = await fetch('https://formspree.io/f/mnjyqlak', {
+                  method: 'POST',
+                  body: new FormData(e.target),
+                  headers: { Accept: 'application/json' },
+                });
+                if (res.ok) { setSent(true); window.scrollTo({ top: 0 }); } else { setError(true); }
+              } catch { setError(true); }
+              setLoading(false);
+            }}
             style={{ background: 'var(--bg2)', border: '1px solid var(--line-200)', borderRadius: 'var(--radius-xl)', padding: 'clamp(24px,4vw,36px)' }}>
             <div className="evt-2col-form" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
-              <Field label="Voornaam" placeholder="Jouw voornaam" required />
-              <Field label="Achternaam" placeholder="Jouw achternaam" required />
-              <Field label="E-mailadres" type="email" placeholder="jij@email.nl" required />
-              <Field label="Telefoonnummer" type="tel" placeholder="06 12 34 56 78" required />
+              <Field label="Voornaam" name="voornaam" placeholder="Jouw voornaam" required />
+              <Field label="Achternaam" name="achternaam" placeholder="Jouw achternaam" required />
+              <Field label="E-mailadres" name="email" type="email" placeholder="jij@email.nl" required />
+              <Field label="Telefoonnummer" name="telefoon" type="tel" placeholder="06 12 34 56 78" required />
             </div>
             <div style={{ marginBottom: 16 }}>
               <label style={{ fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: 13.5, color: 'var(--fg2)', display: 'block', marginBottom: 6 }}>Functie</label>
-              <select value={v ? v.slug : 'open'} onChange={() => {}}
+              <select name="functie" defaultValue={v ? v.slug : 'open'}
                 style={{ width: '100%', boxSizing: 'border-box', fontFamily: 'var(--font-body)', fontSize: 15, color: 'var(--fg1)', padding: '11px 13px', borderRadius: 'var(--radius-md)', border: '1.5px solid var(--line-200)', background: '#fff' }}>
                 {VACATURES.map((x) => <option key={x.slug} value={x.slug}>{x.t}</option>)}
                 <option value="open">Open sollicitatie</option>
@@ -285,17 +299,18 @@ function Solliciteren({ slug, onNav }) {
             </div>
             <div style={{ marginBottom: 16 }}>
               <label style={{ fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: 13.5, color: 'var(--fg2)', display: 'block', marginBottom: 6 }}>Motivatie <span style={{ color: 'var(--fg4)', fontWeight: 500 }}>(optioneel)</span></label>
-              <textarea rows={4} placeholder="Vertel kort waarom je bij Everts past." style={{ width: '100%', boxSizing: 'border-box', fontFamily: 'var(--font-body)', fontSize: 15, color: 'var(--fg1)', padding: '11px 13px', borderRadius: 'var(--radius-md)', border: '1.5px solid var(--line-200)', background: '#fff', outline: 'none', resize: 'vertical' }} />
+              <textarea name="motivatie" rows={4} placeholder="Vertel kort waarom je bij Everts past." style={{ width: '100%', boxSizing: 'border-box', fontFamily: 'var(--font-body)', fontSize: 15, color: 'var(--fg1)', padding: '11px 13px', borderRadius: 'var(--radius-md)', border: '1.5px solid var(--line-200)', background: '#fff', outline: 'none', resize: 'vertical' }} />
             </div>
             <div style={{ marginBottom: 24 }}>
               <label style={{ fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: 13.5, color: 'var(--fg2)', display: 'block', marginBottom: 6 }}>CV uploaden</label>
               <label style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '16px 18px', borderRadius: 'var(--radius-md)', border: '1.5px dashed var(--line-200)', background: '#fff', cursor: 'pointer' }}>
                 <span style={{ width: 40, height: 40, borderRadius: 10, background: 'var(--everts-green-100)', color: 'var(--everts-logo-green)', display: 'flex', alignItems: 'center', justifyContent: 'center', flex: 'none' }}><Icon name={fileName ? 'file-check' : 'upload'} size={19} /></span>
                 <span style={{ fontSize: 14.5, color: fileName ? 'var(--fg1)' : 'var(--fg3)', fontWeight: fileName ? 600 : 400 }}>{fileName || 'Klik om je cv toe te voegen (PDF of Word)'}</span>
-                <input type="file" accept=".pdf,.doc,.docx" onChange={(e) => setFileName(e.target.files[0] ? e.target.files[0].name : '')} style={{ display: 'none' }} />
+                <input type="file" name="cv" accept=".pdf,.doc,.docx" onChange={(e) => setFileName(e.target.files[0] ? e.target.files[0].name : '')} style={{ display: 'none' }} />
               </label>
             </div>
-            <Button as="button" type="submit" iconRight="arrow-right" full>Verstuur sollicitatie</Button>
+            {error && <p style={{ color: 'var(--danger)', fontSize: 14, margin: '0 0 12px' }}>Er ging iets mis. Probeer het opnieuw of mail naar werkenbij@evertsgroep.nl.</p>}
+            <Button as="button" type="submit" iconRight={loading ? 'loader' : 'arrow-right'} full>{loading ? 'Versturen…' : 'Verstuur sollicitatie'}</Button>
             <p style={{ fontSize: 12.5, color: 'var(--fg4)', textAlign: 'center', margin: '14px 0 0', lineHeight: 1.5 }}>Je gegevens gebruiken we alleen voor deze sollicitatie. Zie onze privacyverklaring.</p>
           </form>
         </div>

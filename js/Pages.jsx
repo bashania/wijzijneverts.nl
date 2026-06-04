@@ -133,6 +133,9 @@ function Field({ label, ...rest }) {
 }
 function ContactForm() {
   const [sent, setSent] = useState(false);
+  const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(false);
+
   if (sent) return (
     <div style={{ textAlign: 'center', padding: '40px 0' }}>
       <div style={{ width: 56, height: 56, borderRadius: 999, background: 'var(--success-bg)', color: 'var(--success)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 18px' }}><Icon name="check" size={28} /></div>
@@ -140,19 +143,36 @@ function ContactForm() {
       <p style={{ fontSize: 15, color: 'var(--fg3)', margin: 0 }}>Meestal binnen één werkdag.</p>
     </div>
   );
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setError(false);
+    try {
+      const res = await fetch('https://formspree.io/f/mnjyqlak', {
+        method: 'POST',
+        body: new FormData(e.target),
+        headers: { Accept: 'application/json' },
+      });
+      if (res.ok) { setSent(true); } else { setError(true); }
+    } catch { setError(true); }
+    setLoading(false);
+  };
+
   return (
-    <form onSubmit={(e) => { e.preventDefault(); setSent(true); }}>
+    <form onSubmit={handleSubmit}>
       <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 22, margin: '0 0 20px', color: 'var(--fg1)' }}>Vraag een inspectie aan</h2>
-      <Field label="Naam contactpersoon" placeholder="Bijv. Jan de Vries" required />
-      <Field label="Organisatie / VvE" placeholder="Naam van uw organisatie" />
-      <Field label="E-mailadres" type="email" placeholder="naam@organisatie.nl" required />
+      <Field label="Naam contactpersoon" name="naam" placeholder="Bijv. Jan de Vries" required />
+      <Field label="Organisatie / VvE" name="organisatie" placeholder="Naam van uw organisatie" />
+      <Field label="E-mailadres" name="email" type="email" placeholder="naam@organisatie.nl" required />
       <div style={{ marginBottom: 16 }}>
         <label style={{ fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: 13.5, color: 'var(--fg2)', display: 'block', marginBottom: 6 }}>Waar gaat het over?</label>
-        <select style={{ width: '100%', boxSizing: 'border-box', fontFamily: 'var(--font-body)', fontSize: 15, color: 'var(--fg1)', padding: '11px 13px', borderRadius: 'var(--radius-md)', border: '1.5px solid var(--line-200)', background: '#fff' }}>
+        <select name="onderwerp" style={{ width: '100%', boxSizing: 'border-box', fontFamily: 'var(--font-body)', fontSize: 15, color: 'var(--fg1)', padding: '11px 13px', borderRadius: 'var(--radius-md)', border: '1.5px solid var(--line-200)', background: '#fff' }}>
           <option>Schilderwerk &amp; gevel</option><option>Bouwkundig onderhoud</option><option>Dakdekken</option><option>Everts Servicedesk</option><option>MJOP-advies</option>
         </select>
       </div>
-      <Button as="button" type="submit" iconRight="arrow-right" full>Aanvraag versturen</Button>
+      {error && <p style={{ color: 'var(--danger)', fontSize: 14, margin: '0 0 12px' }}>Er ging iets mis. Probeer het opnieuw of mail direct naar info@evertsgroep.nl.</p>}
+      <Button as="button" type="submit" iconRight={loading ? 'loader' : 'arrow-right'} full>{loading ? 'Versturen…' : 'Aanvraag versturen'}</Button>
     </form>
   );
 }
