@@ -141,7 +141,7 @@ function Werken({ onNav }) {
           </div>
 
           <div style={{ position: 'relative', borderRadius: 'var(--radius-xl)', overflow: 'hidden', marginBottom: 72 }}>
-            <img src="assets/everts-foto-team.jpg" alt="Het team van Everts op locatie" style={{ width: '100%', height: 420, objectFit: 'cover', objectPosition: 'center 47%', display: 'block' }} />
+            <img src="/assets/everts-foto-team.jpg" alt="Het team van Everts op locatie" style={{ width: '100%', height: 420, objectFit: 'cover', objectPosition: 'center 47%', display: 'block' }} />
             <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(0deg, rgba(16,61,37,.82) 0%, rgba(16,61,37,.12) 55%, transparent 100%)' }} />
             <div style={{ position: 'absolute', left: 0, right: 0, bottom: 0, padding: 'clamp(24px,4vw,40px)', color: '#fff' }}>
               <div style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: 'clamp(22px,3vw,30px)', letterSpacing: '-.015em', maxWidth: 560, lineHeight: 1.12 }}>Een hecht team van vakmensen, van directie tot de steiger</div>

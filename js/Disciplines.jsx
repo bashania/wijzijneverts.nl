@@ -7,7 +7,7 @@ const DISCIPLINES = [
     nav: 'Schilderwerk & gevel',
     title: 'Schilderwerk & gevelonderhoud',
     onderdeelVan: 'Everts. Onderhoud & renovatie',
-    photo: 'assets/everts-foto-gevel.jpg', photoPos: 'center 55%',
+    photo: '/assets/everts-foto-gevel.jpg', photoPos: 'center 55%',
     lead: 'Planmatig buiten- en binnenschilderwerk dat uw gevel jaar na jaar in goede staat houdt. Het vak waarmee we in 1922 begonnen, en dat we nog elke dag verder verfijnen.',
     intro: 'Een gevel die er goed bij staat, is meer dan mooi. Het is de eerste bescherming van uw vastgoed tegen weer en wind. Wij werken met een vaste onderhoudscyclus, zodat klein onderhoud groot herstel voorblijft. Onze schilders kennen hun panden en zien wat er aankomt, ruim voordat het een probleem wordt.',
     services: [
@@ -25,7 +25,7 @@ const DISCIPLINES = [
     nav: 'Bouwkundig onderhoud',
     title: 'Bouwkundig onderhoud & herstel',
     onderdeelVan: 'Everts. Onderhoud & renovatie',
-    photo: 'assets/everts-foto-voegwerk.jpg', photoPos: 'center 50%',
+    photo: '/assets/everts-foto-voegwerk.jpg', photoPos: 'center 50%',
     lead: 'Van houtrot en metselwerk tot een complete renovatie. Onze uitvoerders coördineren het hele traject, met één vast aanspreekpunt voor u.',
     intro: 'Bouwkundig onderhoud vraagt om overzicht. Vaak komt er meer bij kijken dan op het eerste gezicht zichtbaar is. Onze projectleiders en uitvoerders brengen het werk vooraf goed in kaart, stemmen af met bewoners en opdrachtgevers, en zorgen dat een project van begin tot oplevering soepel verloopt.',
     services: [
@@ -43,7 +43,7 @@ const DISCIPLINES = [
     nav: 'Dakdekken',
     title: 'Dakdekken',
     onderdeelVan: 'Everts. Onderhoud & renovatie',
-    photo: 'assets/everts-foto-dak-plat.jpg', photoPos: 'center 45%',
+    photo: '/assets/everts-foto-dak-plat.jpg', photoPos: 'center 45%',
     lead: 'Plat- en hellend dakwerk, onderhoud, inspectie en vervanging. Dakdekken doen we volledig in eigen huis, met eigen dakdekkers.',
     intro: 'Een dak doet zijn werk pas echt goed als u er nooit aan hoeft te denken. Daarom inspecteren we proactief, herstellen we klein voordat het groot wordt en houden we de afwatering op orde. Doordat dakdekken bij ons in eigen beheer is, schakelt u niet met een aparte partij: het dak hoort er gewoon bij.',
     services: [
@@ -61,7 +61,7 @@ const DISCIPLINES = [
     nav: 'Everts Servicedesk',
     title: 'Everts Servicedesk',
     onderdeelVan: 'Everts Servicedesk',
-    photo: 'assets/everts-foto-servicedesk.jpg', photoPos: 'center 50%',
+    photo: '/assets/everts-foto-servicedesk.jpg', photoPos: 'center 50%',
     lead: 'Klein dagelijks onderhoud, mutatiewerk en spoedreparaties. Eén melding is genoeg, de rest regelen wij, zonder uitgebreid offertetraject.',
     intro: 'Niet elk klusje hoeft een project te zijn. Voor het kleine, dagelijkse werk is er de Everts Servicedesk: één meldpunt waar u terecht kunt voor reparaties, mutatieonderhoud en spoedgevallen. We pakken het snel op en houden u op de hoogte, zodat u er zelf geen omkijken naar heeft.',
     services: [
@@ -226,7 +226,7 @@ function DisciplinePage({ slug, onNav }) {
       </section>
 
       {/* CTA */}
-      <section style={{ position: 'relative', backgroundImage: "url('assets/everts-achtergrond-klein.png')", backgroundSize: 'cover', backgroundPosition: 'center' }}>
+      <section style={{ position: 'relative', backgroundImage: "url('/assets/everts-achtergrond-klein.png')", backgroundSize: 'cover', backgroundPosition: 'center' }}>
         <div style={{ position: 'absolute', inset: 0, background: 'rgba(16,61,37,.8)' }} />
         <div style={{ position: 'relative', maxWidth: 1200, margin: '0 auto', padding: '72px clamp(20px,4vw,32px)', textAlign: 'center', color: '#fff' }}>
           <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: 'clamp(26px,4vw,38px)', letterSpacing: '-.02em', margin: '0 0 14px' }}>Benieuwd wat we voor uw vastgoed kunnen betekenen?</h2>

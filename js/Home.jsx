@@ -3,7 +3,7 @@
 function HeroHome({ onNav }) {
   return (
     <section style={{ position: 'relative' }}>
-      <img src="assets/everts-foto-hero.jpg" alt="Everts aan het werk aan een gebouw in Zuid-Holland" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 30%' }} />
+      <img src="/assets/everts-foto-hero.jpg" alt="Everts aan het werk aan een gebouw in Zuid-Holland" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 30%' }} />
       <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(90deg, rgba(16,61,37,.9) 0%, rgba(16,61,37,.7) 42%, rgba(16,61,37,.28) 100%)' }} />
       <div style={{ position: 'relative', maxWidth: 1200, margin: '0 auto', padding: '120px clamp(20px,4vw,32px) 124px' }}>
         <div style={{ maxWidth: 700, color: '#fff' }}>
@@ -86,7 +86,7 @@ function Values() {
           <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 'clamp(28px,4vw,38px)', lineHeight: 1.12, letterSpacing: '-.015em', margin: '0 0 24px', color: 'var(--fg1)' }}>
             Geen gezichtsloze aannemer, maar een partner met een naam
           </h2>
-          <Photo src="assets/everts-foto-vakman.jpg" alt="Everts-vakman bij een vers geschilderde voordeur" h={320} pos="center 38%" />
+          <Photo src="/assets/everts-foto-vakman.jpg" alt="Everts-vakman bij een vers geschilderde voordeur" h={320} pos="center 38%" />
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
           {vals.map((v, i) => (
@@ -103,7 +103,7 @@ function Values() {
 
 function CTA({ onNav }) {
   return (
-    <section style={{ position: 'relative', backgroundImage: "url('assets/everts-achtergrond-klein.png')", backgroundSize: 'cover', backgroundPosition: 'center' }}>
+    <section style={{ position: 'relative', backgroundImage: "url('/assets/everts-achtergrond-klein.png')", backgroundSize: 'cover', backgroundPosition: 'center' }}>
       <div style={{ position: 'absolute', inset: 0, background: 'rgba(16,61,37,.8)' }} />
       <div style={{ position: 'relative', maxWidth: 1200, margin: '0 auto', padding: '80px clamp(20px,4vw,32px)', textAlign: 'center', color: '#fff' }}>
         <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: 'clamp(28px,4.5vw,40px)', letterSpacing: '-.02em', margin: '0 0 16px' }}>Benieuwd wat we voor uw vastgoed kunnen betekenen?</h2>

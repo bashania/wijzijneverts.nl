@@ -4,22 +4,22 @@ const DIENSTEN = [
   { slug: 'schilderwerk', icon: 'paint-roller', kicker: 'Everts. Onderhoud & renovatie',
     t: 'Schilderwerk & gevelonderhoud',
     d: 'Planmatig buiten- en binnenschilderwerk, gevelreiniging, kozijnonderhoud en houtrotherstel. We werken met een vaste cyclus, zodat uw gevel er jaar na jaar goed bij staat.',
-    photo: 'assets/everts-foto-gevel.jpg', pos: 'center 55%',
+    photo: '/assets/everts-foto-gevel.jpg', pos: 'center 55%',
     items: ['Buitenschilderwerk', 'Gevelreiniging', 'Kozijnonderhoud', 'HR++-beglazing'] },
   { slug: 'bouwkundig', icon: 'hard-hat', kicker: 'Everts. Onderhoud & renovatie',
     t: 'Bouwkundig onderhoud & herstel',
     d: 'Van metsel- en voegwerk tot betonreparatie en complete renovatie. Onze uitvoerders coördineren het hele traject, met één vast aanspreekpunt voor u.',
-    photo: 'assets/everts-foto-voegwerk.jpg', pos: 'center 50%',
+    photo: '/assets/everts-foto-voegwerk.jpg', pos: 'center 50%',
     items: ['Metsel- & voegwerk', 'Betonreparatie', 'Renovatie', 'Verduurzaming'] },
   { slug: 'dakdekken', icon: 'home', kicker: 'Everts. Onderhoud & renovatie',
     t: 'Dakdekken',
     d: 'Plat- en hellend dakwerk, onderhoud, inspectie en vervanging. We doen het volledig in eigen huis, met eigen dakdekkers.',
-    photo: 'assets/everts-foto-dak-plat.jpg', pos: 'center 58%',
+    photo: '/assets/everts-foto-dak-plat.jpg', pos: 'center 58%',
     items: ['Platte daken', 'Hellende daken', 'Dakinspectie', 'Spoedherstel'] },
   { slug: 'servicedesk', icon: 'headset', kicker: 'Everts Servicedesk',
     t: 'Everts Servicedesk',
     d: 'Klein dagelijks onderhoud, mutatiewerk bij huurderswisseling en spoedreparaties. Eén melding is genoeg, de rest regelen wij, zonder uitgebreid offertetraject.',
-    photo: 'assets/everts-foto-servicedesk.jpg', pos: 'center 50%',
+    photo: '/assets/everts-foto-servicedesk.jpg', pos: 'center 50%',
     items: ['Dagelijks onderhoud', 'Mutatiewerk', 'Spoedreparaties', 'Glasschade'] },
 ];
 
@@ -56,7 +56,7 @@ function Diensten({ onNav }) {
     <div>
       {/* HERO */}
       <section style={{ position: 'relative' }}>
-        <img src="assets/everts-foto-hero.jpg" alt="Vakmensen van Everts aan het werk" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 35%' }} />
+        <img src="/assets/everts-foto-hero.jpg" alt="Vakmensen van Everts aan het werk" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 35%' }} />
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(90deg, rgba(16,61,37,.92) 0%, rgba(16,61,37,.74) 46%, rgba(16,61,37,.42) 100%)' }} />
         <div style={{ position: 'relative', maxWidth: 1200, margin: '0 auto', padding: '92px clamp(20px,4vw,32px) 84px', color: '#fff' }}>
           <div style={{ maxWidth: 680 }}>
@@ -169,7 +169,7 @@ function Diensten({ onNav }) {
       </section>
 
       {/* CTA */}
-      <section style={{ position: 'relative', backgroundImage: "url('assets/everts-achtergrond-klein.png')", backgroundSize: 'cover', backgroundPosition: 'center' }}>
+      <section style={{ position: 'relative', backgroundImage: "url('/assets/everts-achtergrond-klein.png')", backgroundSize: 'cover', backgroundPosition: 'center' }}>
         <div style={{ position: 'absolute', inset: 0, background: 'rgba(16,61,37,.8)' }} />
         <div style={{ position: 'relative', maxWidth: 1200, margin: '0 auto', padding: '80px clamp(20px,4vw,32px)', textAlign: 'center', color: '#fff' }}>
           <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: 'clamp(28px,4.5vw,40px)', letterSpacing: '-.02em', margin: '0 0 16px' }}>Benieuwd wat we voor uw vastgoed kunnen betekenen?</h2>

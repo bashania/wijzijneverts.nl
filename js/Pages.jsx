@@ -2,7 +2,7 @@
 
 function PageHero({ eyebrow, title, sub }) {
   return (
-    <section style={{ position: 'relative', backgroundImage: "url('assets/everts-achtergrond-klein.png')", backgroundSize: 'cover', backgroundPosition: 'center' }}>
+    <section style={{ position: 'relative', backgroundImage: "url('/assets/everts-achtergrond-klein.png')", backgroundSize: 'cover', backgroundPosition: 'center' }}>
       <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(90deg, rgba(16,61,37,.86), rgba(16,61,37,.5))' }} />
       <div style={{ position: 'relative', maxWidth: 1200, margin: '0 auto', padding: '76px clamp(20px,4vw,32px)', color: '#fff' }}>
         <Eyebrow light>{eyebrow}</Eyebrow>
@@ -28,10 +28,10 @@ function Over() {
     { y: '2022', t: 'Everts viert het 100-jarig bestaan, met Bas Hania en Tom Kamminga aan het roer.' },
   ];
   const generaties = [
-    { label: '1e generatie', naam: 'Antoon Everts sr.', jaren: '1886 – 1965', fotos: [{ src: 'assets/familie-antoon-sr.png', pos: 'center 14%' }], t: 'Opgeleid als decoratie-, reclame- en huisschilder in Arnhem. Allround vakman én scherp organisator, die het bedrijf door crisis en oorlog heen loodste.', quote: 'Het gaat in zaken om de mensen. Ben je goed voor hen, dan zijn zij goed voor jou. Zo simpel is het.' },
-    { label: '2e generatie', naam: 'Antoon Everts jr.', jaren: 'directeur vanaf 1956', fotos: [{ src: 'assets/familie-antoon-jr.png', pos: 'center 20%' }], t: 'Bouwde een breed netwerk van opdrachtgevers op, van particulieren tot Defensie, Rijkswaterstaat en de Rijksgebouwendienst.', quote: 'Onze medewerkers zijn de belangrijkste onderdelen van ons bedrijf.' },
-    { label: '3e generatie', naam: 'Rob Everts & Elvin Robbinson', jaren: 'directie vanaf 1983', fotos: [{ src: 'assets/familie-rob-everts.png', pos: 'center 22%' }, { src: 'assets/familie-elvin-robbinson.png', pos: 'center 30%' }], t: 'Rob als directeur, Elvin Robbinson als bedrijfsleider. Samen maakten ze van een puur schildersbedrijf een totaal vastgoedonderhoudsbedrijf, met behoud van het karakter van een familiebedrijf.', quote: 'Vakwerk verkoopt zichzelf. Doe je het goed, dan vragen ze je vanzelf terug.' },
-    { label: 'De huidige generatie', naam: 'Bas Hania & Tom Kamminga', jaren: 'directie vandaag', fotos: [{ src: 'assets/familie-bas-hania.png', pos: 'center 30%' }, { src: 'assets/familie-tom-kamminga.png', pos: 'center 22%' }], t: 'Professionaliseren en laten groeien, met de mensen op de werkvloer voorop. "Wij heten geen Everts, maar voelen ons wel de vierde generatie."', quote: 'De mensen in ons bedrijf zijn het belangrijkste, zij maken het product.' },
+    { label: '1e generatie', naam: 'Antoon Everts sr.', jaren: '1886 – 1965', fotos: [{ src: '/assets/familie-antoon-sr.png', pos: 'center 14%' }], t: 'Opgeleid als decoratie-, reclame- en huisschilder in Arnhem. Allround vakman én scherp organisator, die het bedrijf door crisis en oorlog heen loodste.', quote: 'Het gaat in zaken om de mensen. Ben je goed voor hen, dan zijn zij goed voor jou. Zo simpel is het.' },
+    { label: '2e generatie', naam: 'Antoon Everts jr.', jaren: 'directeur vanaf 1956', fotos: [{ src: '/assets/familie-antoon-jr.png', pos: 'center 20%' }], t: 'Bouwde een breed netwerk van opdrachtgevers op, van particulieren tot Defensie, Rijkswaterstaat en de Rijksgebouwendienst.', quote: 'Onze medewerkers zijn de belangrijkste onderdelen van ons bedrijf.' },
+    { label: '3e generatie', naam: 'Rob Everts & Elvin Robbinson', jaren: 'directie vanaf 1983', fotos: [{ src: '/assets/familie-rob-everts.png', pos: 'center 22%' }, { src: '/assets/familie-elvin-robbinson.png', pos: 'center 30%' }], t: 'Rob als directeur, Elvin Robbinson als bedrijfsleider. Samen maakten ze van een puur schildersbedrijf een totaal vastgoedonderhoudsbedrijf, met behoud van het karakter van een familiebedrijf.', quote: 'Vakwerk verkoopt zichzelf. Doe je het goed, dan vragen ze je vanzelf terug.' },
+    { label: 'De huidige generatie', naam: 'Bas Hania & Tom Kamminga', jaren: 'directie vandaag', fotos: [{ src: '/assets/familie-bas-hania.png', pos: 'center 30%' }, { src: '/assets/familie-tom-kamminga.png', pos: 'center 22%' }], t: 'Professionaliseren en laten groeien, met de mensen op de werkvloer voorop. "Wij heten geen Everts, maar voelen ons wel de vierde generatie."', quote: 'De mensen in ons bedrijf zijn het belangrijkste, zij maken het product.' },
   ];
   const prestige = [
     { t: 'Nirwana-flat, Den Haag', d: 'Driemaal door ons gerenoveerd. De eerste flat van Nederland, een rijksmonument uit 1929.' },
@@ -42,7 +42,7 @@ function Over() {
   return (
     <div>
       <section style={{ position: 'relative' }}>
-        <img src="assets/everts-historie-pand.jpg" alt="Historische foto: het pand van A. Everts &amp; Zoon Schildersbedrijf in Den Haag, met bord, ladder en schilder" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 42%' }} />
+        <img src="/assets/everts-historie-pand.jpg" alt="Historische foto: het pand van A. Everts &amp; Zoon Schildersbedrijf in Den Haag, met bord, ladder en schilder" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 42%' }} />
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(90deg, rgba(16,61,37,.92) 0%, rgba(16,61,37,.74) 46%, rgba(16,61,37,.42) 100%)' }}></div>
         <div style={{ position: 'relative', maxWidth: 1200, margin: '0 auto', padding: '92px clamp(20px,4vw,32px) 92px', color: '#fff' }}>
           <div style={{ maxWidth: 700 }}>
@@ -75,7 +75,7 @@ function Over() {
           </div>
           <div style={{ position: 'sticky', top: 94, display: 'flex', flexDirection: 'column', gap: 20 }}>
             <figure style={{ margin: 0 }}>
-              <Photo src="assets/everts-historie-bleijenberg.jpg" alt="Een schilder van Everts neemt koffie naast zijn zoon, jaren vijftig" h={380} pos="center 35%" />
+              <Photo src="/assets/everts-historie-bleijenberg.jpg" alt="Een schilder van Everts neemt koffie naast zijn zoon, jaren vijftig" h={380} pos="center 35%" />
               <figcaption style={{ fontSize: 13, color: 'var(--fg4)', margin: '10px 2px 0', lineHeight: 1.5 }}>Koffie op de bouw, jaren vijftig. Het vak ging van vader op zoon.</figcaption>
             </figure>
             <div style={{ background: 'var(--everts-dark-green)', borderRadius: 'var(--radius-xl)', padding: 30, color: '#fff' }}>
@@ -184,7 +184,7 @@ function Contact() {
                 ))}
               </div>
             </div>
-            <div style={{ marginTop: 24 }}><Photo src="assets/everts-foto-team.jpg" alt="Vakmensen van Everts op locatie" h={400} pos="center 20%" /></div>
+            <div style={{ marginTop: 24 }}><Photo src="/assets/everts-foto-team.jpg" alt="Vakmensen van Everts op locatie" h={400} pos="center 20%" /></div>
           </div>
           <div style={{ background: 'var(--bg2)', border: '1px solid var(--line-200)', borderRadius: 'var(--radius-xl)', padding: 32 }}>
             <ContactForm />

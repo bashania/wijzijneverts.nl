@@ -56,7 +56,7 @@ function Photo({ src, alt, h = 240, label = 'Everts fotografie', radius = 'var(-
     );
   }
   const tones = {
-    poly: { backgroundImage: "url('assets/everts-achtergrond-klein.png')", backgroundSize: 'cover', backgroundPosition: 'center' },
+    poly: { backgroundImage: "url('/assets/everts-achtergrond-klein.png')", backgroundSize: 'cover', backgroundPosition: 'center' },
     neutral: { background: 'linear-gradient(135deg,#e8ede9,#d9e2db)' },
   };
   return (
