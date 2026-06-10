@@ -3,22 +3,53 @@
 
 const VACATURES = [
   {
-    slug: 'onderhoudsadviseur',
-    t: 'Onderhoudsadviseur (calculator onderhoud)',
-    loc: 'Leidschendam', type: 'Fulltime', hours: '38 uur', team: 'Werkvoorbereiding & calculatie',
-    intro: 'Jij vertaalt een inspectie of bestek naar een heldere, kloppende offerte. Als onderhoudsadviseur ben je de schakel tussen de klant, de uitvoering en de cijfers, met het schilder- en gevelwerk als je vakgebied.',
+    slug: 'calculator-onderhoud',
+    t: 'Calculator Onderhoud',
+    loc: 'Leidschendam · werkgebied Zuid-Holland', type: 'Fulltime', hours: '40 uur', team: 'Calculatie',
+    intro: 'Bij ons zorg jij dat onderhouds- en renovatieprojecten realistisch geprijsd op tafel komen. Geen invuloefening, maar calculatiewerk waar je ook buiten staat: opnemen, beoordelen, meedenken over de juiste oplossing voor de klant.',
+    rol: [
+      'In het begin sta je er zelfstandig voor, met directe ondersteuning vanuit de directie, de projectleiders en de werkvoorbereiders. Je krijgt de ruimte om de werkwijze, de processen en het archief naar jouw hand te zetten.',
+      'Vind je het leuk om iets op te bouwen in plaats van aan te schuiven in iets bestaands? Dan haal je hier veel uit.',
+    ],
+    takenLead: 'Je bent verantwoordelijk voor de calculatie van schilderwerk, gevelonderhoud, planmatig onderhoud en renovatieprojecten. Concreet:',
     taken: [
-      'Je calculeert planmatig onderhoud op het gebied van schilderwerk en gevel.',
-      'Je doet opnames op locatie en denkt mee over de beste aanpak.',
-      'Je stelt heldere offertes en werkbegrotingen op die kloppen.',
-      'Je schakelt met uitvoerders en opdrachtgevers, van VvE tot woningcorporatie.',
+      'Bestekken, inspectierapporten en tekeningen analyseren.',
+      'Werk opnemen op locatie en uitwerken in onze calculatiesoftware.',
+      'Offertes opstellen die kloppen, financieel én technisch.',
+      'Marges bewaken en meer- en minderwerk beoordelen.',
+      'Meedenken over duurzame oplossingen en materiaalkeuzes.',
+      'Schakelen met projectleiders, werkvoorbereiders en opdrachtgevers.',
+      'Samen met de directie de calculatieafdeling opnieuw opbouwen en professionaliseren.',
     ],
+    takenSlot: 'Je rapporteert direct aan de directie. Korte lijnen, geen lagen ertussen.',
+    voorWieLead: 'We werken in Zuid-Holland voor:',
+    voorWie: [
+      "Grotere VvE's en VvE-beheerders.",
+      'Woningcorporaties.',
+      'Vastgoedeigenaren en professionele beheerders.',
+      'Maatschappelijk vastgoed: zorginstellingen, scholen, woonzorgcentra.',
+    ],
+    voorWieSlot: 'Geen particulier werk. Wel afwisseling: van een gevelrenovatie aan een appartementencomplex tot meerjarenonderhoud aan een zorglocatie. Verduurzaming neem je standaard mee in je advies. Onderhoud en energie zijn bij ons geen aparte gesprekken.',
     meebrengt: [
-      'MBO/HBO werk- en denkniveau, bij voorkeur richting bouw of vastgoedonderhoud.',
-      'Ervaring met calculeren of werkvoorbereiding in onderhoud of schilderwerk.',
-      'Oog voor detail en gevoel voor wat een gebouw nodig heeft.',
-      'Je communiceert helder, ook als de boodschap wat minder prettig is.',
+      'MBO-4 of HBO werk- en denkniveau, richting bouwkunde of vastgoedonderhoud.',
+      'Minimaal 3 jaar ervaring als calculator in schilderwerk, onderhoud of renovatie.',
+      'Sterke technische kennis van schilderwerk en gevelonderhoud.',
+      'Ervaring met calculatiesoftware.',
+      'Goede beheersing van Excel.',
+      'Je werkt zelfstandig, neemt initiatief en lost dingen op zonder dat iemand er bovenop zit.',
     ],
+    biedt: [
+      'Salaris tussen €3.800 en €4.500 bruto per maand op basis van 40 uur, afhankelijk van ervaring.',
+      'Auto van de zaak, ook privé te gebruiken.',
+      'Laptop en telefoon van de zaak.',
+      'Thuiswerken behoort tot de mogelijkheden.',
+      '25 vakantiedagen plus ATV conform CAO Schilders (CAO Bouw is bespreekbaar).',
+      'Pensioenregeling via het sectorpensioenfonds.',
+      'Maandelijkse toolbox-meetings en gerichte bijscholing.',
+      'De ruimte om de calculatieafdeling naar jouw inzicht in te richten.',
+      'Een werkplek bij een familiebedrijf met meer dan honderd jaar geschiedenis, een bereikbare directie, en drie bedrijfsfeesten per jaar waar partners en kinderen welkom zijn.',
+    ],
+    cta: 'Ben jij de Calculator Onderhoud die graag werkt aan zichtbare projecten én onderdeel wil zijn van een hecht team? Reageer dan direct. We vertellen je graag meer over de organisatie en de mogelijkheden.',
   },
   {
     slug: 'bouwkundig-calculator',
@@ -89,7 +120,7 @@ function findVacature(slug) { return VACATURES.find((v) => v.slug === slug); }
 // ---------- WERKEN BIJ (overzicht) ----------
 function Werken({ onNav }) {
   const perks = [
-    { icon: 'users', t: 'Een team dat als familie voelt', d: 'Korte lijnen, een open-deurenbeleid en een WhatsApp-community van directie tot vakmens.' },
+    { icon: 'users', t: 'Een team dat als familie voelt', d: 'Korte lijnen en een deur die altijd openstaat. De directie kent je bij naam, en jij hen.' },
     { icon: 'shield-check', t: 'Zekerheid en stabiliteit', d: 'Een werkgever die er al honderd jaar staat, en er morgen nog is.' },
     { icon: 'graduation-cap', t: 'Ruimte om bij te leren', d: 'Maandelijkse toolbox-meetings en gerichte bijscholing op techniek en veiligheid.' },
     { icon: 'party-popper', t: 'Aandacht voor de hele mens', d: 'Drie keer per jaar een Everts-feest, waar partner en kinderen welkom zijn.' },
@@ -110,7 +141,7 @@ function Werken({ onNav }) {
           </div>
 
           <div style={{ position: 'relative', borderRadius: 'var(--radius-xl)', overflow: 'hidden', marginBottom: 72 }}>
-            <img src="assets/everts-foto-team.jpg" alt="Het team van Everts op locatie" style={{ width: '100%', height: 380, objectFit: 'cover', objectPosition: 'center 28%', display: 'block' }} />
+            <img src="assets/everts-foto-team.jpg" alt="Het team van Everts op locatie" style={{ width: '100%', height: 420, objectFit: 'cover', objectPosition: 'center 47%', display: 'block' }} />
             <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(0deg, rgba(16,61,37,.82) 0%, rgba(16,61,37,.12) 55%, transparent 100%)' }} />
             <div style={{ position: 'absolute', left: 0, right: 0, bottom: 0, padding: 'clamp(24px,4vw,40px)', color: '#fff' }}>
               <div style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: 'clamp(22px,3vw,30px)', letterSpacing: '-.015em', maxWidth: 560, lineHeight: 1.12 }}>Een hecht team van vakmensen, van directie tot de steiger</div>
@@ -174,12 +205,19 @@ function VacatureDetail({ slug, onNav }) {
         <div className="evt-detail" style={{ maxWidth: 1100, margin: '0 auto', padding: '56px clamp(20px,4vw,32px) 88px', display: 'grid', gridTemplateColumns: '1fr 340px', gap: 56, alignItems: 'start' }}>
           <div>
             <a href="#" onClick={(e) => { e.preventDefault(); onNav('werken'); }} style={{ display: 'inline-flex', alignItems: 'center', gap: 7, fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: 14, color: 'var(--everts-green)', textDecoration: 'none', marginBottom: 28 }}><Icon name="arrow-left" size={16} /> Alle vacatures</a>
-            <DetailBlock title="Wat ga je doen?" items={v.taken} icon="check" />
+            {v.rol && (
+              <div style={{ marginBottom: 32 }}>
+                <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 22, margin: '0 0 16px', color: 'var(--fg1)', letterSpacing: '-.01em' }}>Wat voor rol dit is</h3>
+                {v.rol.map((p) => <p key={p} style={{ fontSize: 15.5, lineHeight: 1.65, color: 'var(--fg2)', margin: '0 0 14px' }}>{p}</p>)}
+              </div>
+            )}
+            <DetailBlock title="Wat ga je doen?" lead={v.takenLead} items={v.taken} slot={v.takenSlot} icon="check" />
+            {v.voorWie && <DetailBlock title="Voor wie wij werken" lead={v.voorWieLead} items={v.voorWie} slot={v.voorWieSlot} icon="building-2" />}
             <DetailBlock title="Wat breng je mee?" items={v.meebrengt} icon="check" />
-            <DetailBlock title="Wat bieden we jou?" items={BIEDT} icon="check" />
+            <DetailBlock title="Wat bieden we jou?" items={v.biedt || BIEDT} icon="check" />
             <div style={{ marginTop: 36, paddingTop: 32, borderTop: '1px solid var(--line-200)' }}>
               <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 22, margin: '0 0 10px', color: 'var(--fg1)' }}>Klinkt dit als jouw volgende stap?</h3>
-              <p style={{ fontSize: 15.5, lineHeight: 1.65, color: 'var(--fg2)', margin: '0 0 20px', maxWidth: 540 }}>Solliciteer direct, het kost je twee minuten. Heb je eerst nog een vraag? Bel of app gerust met Sandra van ons team.</p>
+              <p style={{ fontSize: 15.5, lineHeight: 1.65, color: 'var(--fg2)', margin: '0 0 20px', maxWidth: 540 }}>{v.cta || 'Solliciteer direct, het kost je twee minuten. Heb je eerst nog een vraag? Bel of app gerust met ons team.'}</p>
               <Button iconRight="arrow-right" onClick={() => onNav('solliciteren', v.slug)}>Solliciteer op deze functie</Button>
             </div>
           </div>
@@ -206,10 +244,11 @@ function VacatureDetail({ slug, onNav }) {
   );
 }
 
-function DetailBlock({ title, items, icon }) {
+function DetailBlock({ title, items, icon, lead, slot }) {
   return (
     <div style={{ marginBottom: 32 }}>
       <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 22, margin: '0 0 16px', color: 'var(--fg1)', letterSpacing: '-.01em' }}>{title}</h3>
+      {lead && <p style={{ fontSize: 15.5, lineHeight: 1.65, color: 'var(--fg2)', margin: '0 0 16px' }}>{lead}</p>}
       <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 12 }}>
         {items.map((it) => (
           <li key={it} style={{ display: 'flex', gap: 12, fontSize: 15.5, lineHeight: 1.55, color: 'var(--fg2)' }}>
@@ -218,6 +257,7 @@ function DetailBlock({ title, items, icon }) {
           </li>
         ))}
       </ul>
+      {slot && <p style={{ fontSize: 15.5, lineHeight: 1.65, color: 'var(--fg2)', margin: '16px 0 0' }}>{slot}</p>}
     </div>
   );
 }
@@ -225,16 +265,11 @@ function DetailBlock({ title, items, icon }) {
 function Recruiter() {
   return (
     <div style={{ marginTop: 20, background: '#fff', border: '1px solid var(--line-200)', borderRadius: 'var(--radius-xl)', padding: 24, boxShadow: 'var(--shadow-sm)' }}>
-      <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 16 }}>
-        <div style={{ width: 56, height: 56, borderRadius: 999, background: 'var(--everts-green-100)', color: 'var(--everts-logo-green)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: 22, flex: 'none' }}>S</div>
-        <div>
-          <div style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 16, color: 'var(--fg1)' }}>Sandra de Wit</div>
-          <div style={{ fontSize: 13.5, color: 'var(--fg3)' }}>Werving &amp; selectie</div>
-        </div>
-      </div>
+      <div style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 16, color: 'var(--fg1)', marginBottom: 6 }}>Vragen over deze vacature?</div>
+      <p style={{ fontSize: 14, lineHeight: 1.6, color: 'var(--fg3)', margin: '0 0 16px' }}>Bel of mail ons gerust. Je spreekt iemand van het team, geen tussenlagen.</p>
       <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-        <a href="tel:0703012580" style={{ display: 'flex', alignItems: 'center', gap: 9, fontSize: 14.5, color: 'var(--fg2)', textDecoration: 'none', fontWeight: 500 }}><Icon name="phone" size={16} style={{ color: 'var(--everts-logo-green)' }} /> 070 301 25 80</a>
-        <a href="mailto:werkenbij@evertsgroep.nl" style={{ display: 'flex', alignItems: 'center', gap: 9, fontSize: 14.5, color: 'var(--fg2)', textDecoration: 'none', fontWeight: 500 }}><Icon name="mail" size={16} style={{ color: 'var(--everts-logo-green)' }} /> werkenbij@evertsgroep.nl</a>
+        <a href="tel:0703012580" style={{ display: 'flex', alignItems: 'center', gap: 9, fontSize: 14.5, color: 'var(--fg2)', textDecoration: 'none', fontWeight: 500, whiteSpace: 'nowrap' }}><Icon name="phone" size={16} style={{ color: 'var(--everts-logo-green)' }} /> 070 301 25 80</a>
+        <a href="mailto:werkenbij@everts.chat" style={{ display: 'flex', alignItems: 'center', gap: 9, fontSize: 14.5, color: 'var(--fg2)', textDecoration: 'none', fontWeight: 500, whiteSpace: 'nowrap' }}><Icon name="mail" size={16} style={{ color: 'var(--everts-logo-green)' }} /> werkenbij@everts.chat</a>
       </div>
     </div>
   );
@@ -245,8 +280,7 @@ function Solliciteren({ slug, onNav }) {
   const v = slug === 'open' ? null : findVacature(slug);
   const titel = v ? v.t : 'Open sollicitatie';
   const [sent, setSent] = useState(false);
-  const [error, setError] = useState(false);
-  const [loading, setLoading] = useState(false);
+  const [err, setErr] = useState(false);
   const [fileName, setFileName] = useState('');
 
   if (sent) return (
@@ -256,7 +290,7 @@ function Solliciteren({ slug, onNav }) {
         <div style={{ maxWidth: 640, margin: '0 auto', padding: '72px clamp(20px,4vw,32px)', textAlign: 'center' }}>
           <div style={{ width: 64, height: 64, borderRadius: 999, background: 'var(--success-bg)', color: 'var(--success)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 22px' }}><Icon name="check" size={32} /></div>
           <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 26, margin: '0 0 12px', color: 'var(--fg1)' }}>We nemen snel contact met je op</h2>
-          <p style={{ fontSize: 16, lineHeight: 1.65, color: 'var(--fg2)', margin: '0 0 28px' }}>Sandra kijkt je sollicitatie persoonlijk door en belt of mailt je meestal binnen twee werkdagen. Tot snel.</p>
+          <p style={{ fontSize: 16, lineHeight: 1.65, color: 'var(--fg2)', margin: '0 0 28px' }}>We kijken je sollicitatie persoonlijk door en bellen of mailen je meestal binnen twee werkdagen. Tot snel.</p>
           <Button variant="secondary" icon="arrow-left" onClick={() => onNav('werken')}>Terug naar vacatures</Button>
         </div>
       </section>
@@ -269,20 +303,18 @@ function Solliciteren({ slug, onNav }) {
       <section style={{ background: '#fff' }}>
         <div style={{ maxWidth: 720, margin: '0 auto', padding: '56px clamp(20px,4vw,32px) 88px' }}>
           <a href="#" onClick={(e) => { e.preventDefault(); onNav(v ? 'vacature' : 'werken', v ? v.slug : null); }} style={{ display: 'inline-flex', alignItems: 'center', gap: 7, fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: 14, color: 'var(--everts-green)', textDecoration: 'none', marginBottom: 28 }}><Icon name="arrow-left" size={16} /> Terug</a>
-          <form onSubmit={async (e) => {
+          <form name="sollicitatie" method="POST" data-netlify="true" netlify-honeypot="bot-field" encType="multipart/form-data"
+            onSubmit={(e) => {
               e.preventDefault();
-              setLoading(true); setError(false);
-              try {
-                const res = await fetch('https://formspree.io/f/mnjyqlak', {
-                  method: 'POST',
-                  body: new FormData(e.target),
-                  headers: { Accept: 'application/json' },
-                });
-                if (res.ok) { setSent(true); window.scrollTo({ top: 0 }); } else { setError(true); }
-              } catch { setError(true); }
-              setLoading(false);
+              setErr(false);
+              fetch('/', { method: 'POST', body: new FormData(e.currentTarget) })
+                .then((r) => { if (!r.ok) throw new Error(); setSent(true); window.scrollTo({ top: 0 }); })
+                .catch(() => setErr(true));
             }}
             style={{ background: 'var(--bg2)', border: '1px solid var(--line-200)', borderRadius: 'var(--radius-xl)', padding: 'clamp(24px,4vw,36px)' }}>
+            <input type="hidden" name="form-name" value="sollicitatie" />
+            <input type="hidden" name="functie-titel" value={titel} />
+            <p hidden><label>Niet invullen: <input name="bot-field" /></label></p>
             <div className="evt-2col-form" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
               <Field label="Voornaam" name="voornaam" placeholder="Jouw voornaam" required />
               <Field label="Achternaam" name="achternaam" placeholder="Jouw achternaam" required />
@@ -302,16 +334,16 @@ function Solliciteren({ slug, onNav }) {
               <textarea name="motivatie" rows={4} placeholder="Vertel kort waarom je bij Everts past." style={{ width: '100%', boxSizing: 'border-box', fontFamily: 'var(--font-body)', fontSize: 15, color: 'var(--fg1)', padding: '11px 13px', borderRadius: 'var(--radius-md)', border: '1.5px solid var(--line-200)', background: '#fff', outline: 'none', resize: 'vertical' }} />
             </div>
             <div style={{ marginBottom: 24 }}>
-              <label style={{ fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: 13.5, color: 'var(--fg2)', display: 'block', marginBottom: 6 }}>CV uploaden</label>
+              <label style={{ fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: 13.5, color: 'var(--fg2)', display: 'block', marginBottom: 6 }}>CV uploaden <span style={{ color: 'var(--fg4)', fontWeight: 500 }}>(PDF of Word)</span></label>
               <label style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '16px 18px', borderRadius: 'var(--radius-md)', border: '1.5px dashed var(--line-200)', background: '#fff', cursor: 'pointer' }}>
                 <span style={{ width: 40, height: 40, borderRadius: 10, background: 'var(--everts-green-100)', color: 'var(--everts-logo-green)', display: 'flex', alignItems: 'center', justifyContent: 'center', flex: 'none' }}><Icon name={fileName ? 'file-check' : 'upload'} size={19} /></span>
-                <span style={{ fontSize: 14.5, color: fileName ? 'var(--fg1)' : 'var(--fg3)', fontWeight: fileName ? 600 : 400 }}>{fileName || 'Klik om je cv toe te voegen (PDF of Word)'}</span>
+                <span style={{ fontSize: 14.5, color: fileName ? 'var(--fg1)' : 'var(--fg3)', fontWeight: fileName ? 600 : 400 }}>{fileName || 'Klik om je cv toe te voegen'}</span>
                 <input type="file" name="cv" accept=".pdf,.doc,.docx" onChange={(e) => setFileName(e.target.files[0] ? e.target.files[0].name : '')} style={{ display: 'none' }} />
               </label>
             </div>
-            {error && <p style={{ color: 'var(--danger)', fontSize: 14, margin: '0 0 12px' }}>Er ging iets mis. Probeer het opnieuw of mail naar werkenbij@evertsgroep.nl.</p>}
-            <Button as="button" type="submit" iconRight={loading ? 'loader' : 'arrow-right'} full>{loading ? 'Versturen…' : 'Verstuur sollicitatie'}</Button>
-            <p style={{ fontSize: 12.5, color: 'var(--fg4)', textAlign: 'center', margin: '14px 0 0', lineHeight: 1.5 }}>Je gegevens gebruiken we alleen voor deze sollicitatie. Zie onze privacyverklaring.</p>
+            {err && <p style={{ fontSize: 13.5, color: 'var(--danger)', margin: '0 0 14px', lineHeight: 1.5 }}>Er ging iets mis bij het versturen. Probeer het opnieuw of mail je sollicitatie direct naar <a href="mailto:werkenbij@everts.chat" style={{ color: 'var(--danger)', fontWeight: 600 }}>werkenbij@everts.chat</a>.</p>}
+            <Button as="button" type="submit" iconRight="arrow-right" full>Verstuur sollicitatie</Button>
+            <p style={{ fontSize: 12.5, color: 'var(--fg4)', textAlign: 'center', margin: '14px 0 0', lineHeight: 1.5 }}>Je gegevens gebruiken we alleen voor deze sollicitatie. Lees onze <a href="#" onClick={(e) => { e.preventDefault(); onNav('privacy'); }} style={{ color: 'var(--everts-green)', fontWeight: 600 }}>privacyverklaring</a>.</p>
           </form>
         </div>
       </section>

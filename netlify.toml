@@ -1,0 +1,11 @@
+# Netlify-configuratie voor de Everts-website (statische site, geen build-stap)
+[build]
+  publish = "."
+
+# Nette beveiligingsheaders
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"

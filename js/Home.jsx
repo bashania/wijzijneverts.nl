@@ -15,7 +15,7 @@ function HeroHome({ onNav }) {
             Wij ontzorgen grotere VvE's, vastgoedeigenaren, woningcorporaties en maatschappelijke organisaties volledig. Van advies tot oplevering, met één vast aanspreekpunt.
           </p>
           <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap' }}>
-            <Button size="lg" variant="white" iconRight="arrow-right" onClick={() => onNav('contact')}>Vraag een offerte aan</Button>
+            <Button size="lg" variant="white" iconRight="arrow-right" onClick={() => onNav('contact')}>Maak een afspraak</Button>
             <Button size="lg" variant="ghost" onClick={() => onNav('diensten')}><span style={{ color: '#fff' }}>Bekijk wat we doen</span></Button>
           </div>
         </div>
@@ -42,10 +42,10 @@ function TrustBar() {
 
 function Services({ onNav }) {
   const services = [
-    { icon: 'paint-roller', t: 'Schilderwerk & gevel', d: 'Planmatig buiten- en binnenschilderwerk, gevelonderhoud en kozijnherstel.' },
-    { icon: 'hard-hat', t: 'Bouwkundig onderhoud', d: 'Van houtrot en metselwerk tot complete renovatie, vakkundig uitgevoerd.' },
-    { icon: 'home', t: 'Dakdekken', d: 'Plat- en hellend dakwerk, onderhoud en vervanging door eigen dakdekkers.' },
-    { icon: 'headset', t: 'Everts Servicedesk', d: 'Klein dagelijks onderhoud, mutatiewerk en spoedreparaties, snel geregeld.' },
+    { slug: 'schilderwerk', icon: 'paint-roller', t: 'Schilderwerk & gevel', d: 'Planmatig buiten- en binnenschilderwerk, gevelonderhoud en kozijnherstel.' },
+    { slug: 'bouwkundig', icon: 'hard-hat', t: 'Bouwkundig onderhoud', d: 'Van houtrot en metselwerk tot complete renovatie, vakkundig uitgevoerd.' },
+    { slug: 'dakdekken', icon: 'home', t: 'Dakdekken', d: 'Plat- en hellend dakwerk, onderhoud en vervanging door eigen dakdekkers.' },
+    { slug: 'servicedesk', icon: 'headset', t: 'Everts Servicedesk', d: 'Klein dagelijks onderhoud, mutatiewerk en spoedreparaties, snel geregeld.' },
   ];
   return (
     <section style={{ background: 'var(--bg2)' }}>
@@ -58,11 +58,12 @@ function Services({ onNav }) {
         </div>
         <div className="evt-grid-4" style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 20 }}>
           {services.map((s) => (
-            <div key={s.t} style={{ background: '#fff', border: '1px solid var(--line-200)', borderRadius: 'var(--radius-lg)', boxShadow: 'var(--shadow-md)', padding: 26, display: 'flex', flexDirection: 'column', gap: 14 }}>
+            <div key={s.t} onClick={() => onNav('discipline', s.slug)} style={{ background: '#fff', border: '1px solid var(--line-200)', borderRadius: 'var(--radius-lg)', boxShadow: 'var(--shadow-md)', padding: 26, display: 'flex', flexDirection: 'column', gap: 14, cursor: 'pointer', transition: 'box-shadow .15s, transform .15s' }}
+              onMouseEnter={(e) => { e.currentTarget.style.boxShadow = 'var(--shadow-lg)'; e.currentTarget.style.transform = 'translateY(-2px)'; }} onMouseLeave={(e) => { e.currentTarget.style.boxShadow = 'var(--shadow-md)'; e.currentTarget.style.transform = 'none'; }}>
               <div style={{ width: 48, height: 48, borderRadius: 12, background: 'var(--everts-green-100)', color: 'var(--everts-logo-green)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}><Icon name={s.icon} size={24} /></div>
               <div style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 18, color: 'var(--fg1)' }}>{s.t}</div>
               <p style={{ fontSize: 14.5, lineHeight: 1.6, color: 'var(--fg3)', margin: 0, flex: 1 }}>{s.d}</p>
-              <a href="#" onClick={(e) => { e.preventDefault(); onNav('diensten'); }} style={{ display: 'flex', alignItems: 'center', gap: 7, fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: 13.5, color: 'var(--everts-green)', textDecoration: 'none' }}>Meer hierover <Icon name="arrow-right" size={15} /></a>
+              <span style={{ display: 'flex', alignItems: 'center', gap: 7, fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: 13.5, color: 'var(--everts-green)' }}>Meer hierover <Icon name="arrow-right" size={15} /></span>
             </div>
           ))}
         </div>
@@ -85,7 +86,7 @@ function Values() {
           <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 'clamp(28px,4vw,38px)', lineHeight: 1.12, letterSpacing: '-.015em', margin: '0 0 24px', color: 'var(--fg1)' }}>
             Geen gezichtsloze aannemer, maar een partner met een naam
           </h2>
-          <Photo src="assets/everts-foto-schilder.jpg" alt="Everts-schilder aan het werk op de steiger" h={320} pos="center 30%" />
+          <Photo src="assets/everts-foto-vakman.jpg" alt="Everts-vakman bij een vers geschilderde voordeur" h={320} pos="center 38%" />
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
           {vals.map((v, i) => (
@@ -116,6 +117,43 @@ function CTA({ onNav }) {
   );
 }
 
+function WerkenBijPromo({ onNav }) {
+  const jobs = [
+    { slug: 'calculator-onderhoud', t: 'Calculator Onderhoud', meta: 'Leidschendam · 40 uur', d: 'Jij prijst onderhouds- en renovatieprojecten realistisch door, opnemen, beoordelen, meedenken, en bouwt mee aan onze calculatieafdeling.' },
+    { slug: 'bouwkundig-calculator', t: 'Bouwkundig calculator', meta: 'Leidschendam · fulltime', d: 'Van houtrotherstel tot complete renovatie: jij rekent het door en zorgt dat onze offertes financieel én technisch kloppen.' },
+  ];
+  return (
+    <section style={{ background: 'var(--everts-green-50)', borderTop: '1px solid var(--everts-green-100)', borderBottom: '1px solid var(--everts-green-100)' }}>
+      <div style={{ maxWidth: 1200, margin: '0 auto', padding: '80px clamp(20px,4vw,32px)' }}>
+        <div className="evt-2col" style={{ display: 'grid', gridTemplateColumns: '0.85fr 1.15fr', gap: 48, alignItems: 'center' }}>
+          <div>
+            <Eyebrow>Werken bij Everts</Eyebrow>
+            <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 'clamp(28px,4vw,38px)', lineHeight: 1.12, letterSpacing: '-.015em', margin: '0 0 16px', color: 'var(--fg1)' }}>We zoeken twee calculators</h2>
+            <p style={{ fontSize: 16.5, lineHeight: 1.65, color: 'var(--fg2)', margin: '0 0 24px', maxWidth: 420 }}>
+              Wil je niet aanschuiven in iets bestaands, maar mee opbouwen? Bij ons rapporteer je direct aan de directie, met korte lijnen en de ruimte om de calculatieafdeling naar jouw hand te zetten.
+            </p>
+            <Button variant="secondary" iconRight="arrow-right" onClick={() => onNav('werken')}>Solliciteer nu</Button>
+          </div>
+          <div className="evt-grid-2" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 18 }}>
+            {jobs.map((j) => (
+              <div key={j.slug} onClick={() => onNav('vacature', j.slug)} style={{ background: '#fff', border: '1px solid var(--line-200)', borderRadius: 'var(--radius-lg)', boxShadow: 'var(--shadow-sm)', padding: 24, display: 'flex', flexDirection: 'column', gap: 12, cursor: 'pointer', transition: 'box-shadow .15s, transform .15s' }}
+                onMouseEnter={(e) => { e.currentTarget.style.boxShadow = 'var(--shadow-md)'; e.currentTarget.style.transform = 'translateY(-2px)'; }} onMouseLeave={(e) => { e.currentTarget.style.boxShadow = 'var(--shadow-sm)'; e.currentTarget.style.transform = 'none'; }}>
+                <div style={{ width: 44, height: 44, borderRadius: 11, background: 'var(--everts-green-100)', color: 'var(--everts-logo-green)', display: 'flex', alignItems: 'center', justifyContent: 'center', flex: 'none' }}><Icon name="calculator" size={22} /></div>
+                <div>
+                  <div style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 18, color: 'var(--fg1)', marginBottom: 4 }}>{j.t}</div>
+                  <div style={{ fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: 12.5, letterSpacing: '.04em', textTransform: 'uppercase', color: 'var(--everts-green)' }}>{j.meta}</div>
+                </div>
+                <p style={{ fontSize: 14, lineHeight: 1.6, color: 'var(--fg3)', margin: 0, flex: 1 }}>{j.d}</p>
+                <span style={{ display: 'flex', alignItems: 'center', gap: 7, fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: 14, color: 'var(--everts-green)' }}>Bekijk vacature <Icon name="arrow-right" size={15} /></span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function Home({ onNav }) {
   return (
     <div>
@@ -123,6 +161,7 @@ function Home({ onNav }) {
       <TrustBar />
       <Services onNav={onNav} />
       <Values />
+      <WerkenBijPromo onNav={onNav} />
       <CTA onNav={onNav} />
     </div>
   );

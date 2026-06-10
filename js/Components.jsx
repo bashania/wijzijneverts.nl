@@ -82,4 +82,20 @@ function Stat({ value, label }) {
   );
 }
 
-Object.assign(window, { Icon, Button, Photo, Eyebrow, Stat });
+/* URL-structuur van de site. Geeft per pagina het pad terug, relatief aan de site-root
+   (op deelpagina's zorgt een <base>-tag dat relatieve paden goed uitkomen). */
+function EVT_URL(page, slug = null) {
+  switch (page) {
+    case 'over': return 'over-everts/';
+    case 'diensten': return 'wat-we-doen/';
+    case 'discipline': return 'wat-we-doen/' + slug + '/';
+    case 'werken': return 'werken-bij/';
+    case 'vacature': return 'werken-bij/' + slug + '/';
+    case 'solliciteren': return slug ? 'solliciteren/' + slug + '/' : 'solliciteren/';
+    case 'contact': return 'contact/';
+    case 'privacy': return 'privacy/';
+    default: return './';
+  }
+}
+
+Object.assign(window, { Icon, Button, Photo, Eyebrow, Stat, EVT_URL });
