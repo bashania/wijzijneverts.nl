@@ -161,7 +161,7 @@ function Werken({ onNav }) {
               <div style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 19, color: 'var(--fg1)', marginBottom: 4 }}>Geen passende vacature gevonden?</div>
               <p style={{ margin: 0, fontSize: 15, color: 'var(--fg2)' }}>Stuur ons een open sollicitatie. We maken graag kennis met goede vakmensen.</p>
             </div>
-            <Button variant="secondary" iconRight="arrow-right" onClick={() => onNav('solliciteren', 'open')}>Open sollicitatie</Button>
+            <Button variant="secondary" iconRight="arrow-right" onClick={() => onNav('solliciteren')}>Open sollicitatie</Button>
           </div>
         </div>
       </section>
