@@ -54,7 +54,7 @@ const VACATURES = [
   {
     slug: 'bouwkundig-calculator',
     t: 'Bouwkundig calculator',
-    loc: 'Leidschendam', type: 'Fulltime', hours: '38 uur', team: 'Werkvoorbereiding & calculatie',
+    loc: 'Leidschendam', type: 'Fulltime', hours: '40 uur', team: 'Werkvoorbereiding & calculatie',
     intro: 'Van houtrotherstel tot complete renovatie: jij rekent het door. Als bouwkundig calculator zorg je dat onze offertes realistisch zijn en dat de uitvoering met een kloppend plan de straat op gaat.',
     taken: [
       'Je maakt calculaties voor bouwkundig onderhoud en renovatieprojecten.',
