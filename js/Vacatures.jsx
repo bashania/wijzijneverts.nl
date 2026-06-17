@@ -8,8 +8,8 @@ const VACATURES = [
     loc: 'Leidschendam · werkgebied Zuid-Holland', type: 'Fulltime', hours: '40 uur', team: 'Calculatie',
     intro: 'Bij ons zorg jij dat onderhouds- en renovatieprojecten realistisch geprijsd op tafel komen. Geen invuloefening, maar calculatiewerk waar je ook buiten staat: opnemen, beoordelen, meedenken over de juiste oplossing voor de klant.',
     rol: [
-      'In het begin sta je er zelfstandig voor, met directe ondersteuning vanuit de directie, de projectleiders en de werkvoorbereiders. Je krijgt de ruimte om de werkwijze, de processen en het archief naar jouw hand te zetten.',
-      'Vind je het leuk om iets op te bouwen in plaats van aan te schuiven in iets bestaands? Dan haal je hier veel uit.',
+      'Je start zelfstandig, maar staat er nooit alleen voor. De directie, projectleiders en werkvoorbereiders zijn direct betrokken en denken met je mee. Tegelijk krijg je veel vrijheid om werkwijzen, processen en het archief naar jouw hand te zetten.',
+      'Krijg je energie van bouwen, verbeteren en eigenaarschap nemen? Dan zit je hier op je plek.',
     ],
     takenLead: 'Je bent verantwoordelijk voor de calculatie van schilderwerk, gevelonderhoud, planmatig onderhoud en renovatieprojecten. Concreet:',
     taken: [
@@ -29,7 +29,7 @@ const VACATURES = [
       'Vastgoedeigenaren en professionele beheerders.',
       'Maatschappelijk vastgoed: zorginstellingen, scholen, woonzorgcentra.',
     ],
-    voorWieSlot: 'Geen particulier werk. Wel afwisseling: van een gevelrenovatie aan een appartementencomplex tot meerjarenonderhoud aan een zorglocatie. Verduurzaming neem je standaard mee in je advies. Onderhoud en energie zijn bij ons geen aparte gesprekken.',
+    voorWieSlot: 'Geen particulier werk. Wel afwisseling: van een gevelrenovatie aan een appartementencomplex tot meerjarenonderhoud aan een zorglocatie. Verduurzaming neem je standaard mee in je advies. Onderhoud en energiebesparing zijn bij ons geen losse onderwerpen, maar onderdeel van hetzelfde gesprek.',
     meebrengt: [
       'MBO-4 of HBO werk- en denkniveau, richting bouwkunde of vastgoedonderhoud.',
       'Minimaal 3 jaar ervaring als calculator in schilderwerk, onderhoud of renovatie.',
@@ -47,7 +47,7 @@ const VACATURES = [
       'Pensioenregeling via het sectorpensioenfonds.',
       'Maandelijkse toolbox-meetings en gerichte bijscholing.',
       'De ruimte om de calculatieafdeling naar jouw inzicht in te richten.',
-      'Een werkplek bij een familiebedrijf met meer dan honderd jaar geschiedenis, een bereikbare directie, en drie bedrijfsfeesten per jaar waar partners en kinderen welkom zijn.',
+      'Een werkplek bij een familiebedrijf met meer dan honderd jaar geschiedenis, een bereikbare directie en drie bedrijfsfeesten per jaar waar partners en kinderen welkom zijn.',
     ],
     cta: 'Ben jij de Calculator Onderhoud die graag werkt aan zichtbare projecten én onderdeel wil zijn van een hecht team? Reageer dan direct. We vertellen je graag meer over de organisatie en de mogelijkheden.',
   },
@@ -84,7 +84,7 @@ const VACATURES = [
       'Een afgeronde opleiding schilderen of aantoonbare ervaring in het vak.',
       'Je werkt zelfstandig én prettig samen in een vast team.',
       'Rijbewijs B is een pré.',
-      'Je houdt van afwisseling en netjes afgewerkt werk.',
+      'Je houdt van afwisseling en vindt het belangrijk dat alles netjes wordt opgeleverd.',
     ],
   },
   {
@@ -120,10 +120,10 @@ function findVacature(slug) { return VACATURES.find((v) => v.slug === slug); }
 // ---------- WERKEN BIJ (overzicht) ----------
 function Werken({ onNav }) {
   const perks = [
-    { icon: 'users', t: 'Een team dat als familie voelt', d: 'Korte lijnen en een deur die altijd openstaat. De directie kent je bij naam, en jij hen.' },
-    { icon: 'shield-check', t: 'Zekerheid en stabiliteit', d: 'Een werkgever die er al honderd jaar staat, en er morgen nog is.' },
+    { icon: 'users', t: 'Een team dat als familie voelt', d: 'Korte lijnen en een deur die altijd openstaat. De directie kent je bij naam en jij hen.' },
+    { icon: 'shield-check', t: 'Zekerheid en stabiliteit', d: 'Een werkgever die er al honderd jaar staat en er morgen nog is.' },
     { icon: 'graduation-cap', t: 'Ruimte om bij te leren', d: 'Maandelijkse toolbox-meetings en gerichte bijscholing op techniek en veiligheid.' },
-    { icon: 'party-popper', t: 'Aandacht voor de hele mens', d: 'Drie keer per jaar een Everts-feest, waar partner en kinderen welkom zijn.' },
+    { icon: 'party-popper', t: 'Aandacht voor de hele mens', d: 'Drie keer per jaar een Everts-feest, waarbij ook je partner en kinderen van harte welkom zijn.' },
   ];
   return (
     <div>
