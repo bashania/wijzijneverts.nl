@@ -47,7 +47,7 @@ const VACATURES = [
       'Pensioenregeling via het sectorpensioenfonds.',
       'Maandelijkse toolbox-meetings en gerichte bijscholing.',
       'De ruimte om de calculatieafdeling naar jouw inzicht in te richten.',
-      'Een werkplek bij een familiebedrijf met meer dan honderd jaar geschiedenis, een bereikbare directie en drie bedrijfsfeesten per jaar waar partners en kinderen welkom zijn.',
+      'Een werkplek bij een familiebedrijf met meer dan honderd jaar geschiedenis, een bereikbare directie en drie Everts-feesten per jaar waarbij ook partners en kinderen van harte welkom zijn.',
     ],
     cta: 'Ben jij de Calculator Onderhoud die graag werkt aan zichtbare projecten én onderdeel wil zijn van een hecht team? Reageer dan direct. We vertellen je graag meer over de organisatie en de mogelijkheden.',
   },
@@ -111,7 +111,7 @@ const BIEDT = [
   'Een marktconform salaris dat past bij jouw ervaring.',
   'Ruimte om bij te leren via toolbox-meetings en gerichte bijscholing.',
   'Een hecht team met korte lijnen, van directie tot vakmens.',
-  'Drie keer per jaar een Everts-feest, waar je partner en kinderen welkom zijn.',
+  'Drie keer per jaar een Everts-feest, waarbij ook je partner en kinderen van harte welkom zijn.',
   'Goede secundaire voorwaarden volgens cao.',
 ];
 
