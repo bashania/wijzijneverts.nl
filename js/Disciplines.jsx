@@ -14,7 +14,7 @@ const DISCIPLINES = [
       { icon: 'paint-roller', t: 'Buitenschilderwerk', d: 'Planmatig schilderwerk aan gevels, kozijnen en houtwerk volgens een vaste cyclus.' },
       { icon: 'home', t: 'Binnenschilderwerk', d: 'Trappenhuizen, gemeenschappelijke ruimtes en woningen: zorgvuldig geschilderd, met minimale overlast en respect voor bewoners.' },
       { icon: 'droplets', t: 'Gevelreiniging & impregneren', d: 'Reinigen, herstellen en beschermen van metsel- en pleisterwerk tegen vocht.' },
-      { icon: 'square-pen', t: 'Kozijn onderhoud & houtrot herstel', d: 'Vroegtijdig herstel van houtrot voorkomt kostbare vervanging op een later moment.' },
+      { icon: 'square-pen', t: 'Kozijnonderhoud & houtrotherstel', d: 'Vroegtijdig herstel van houtrot voorkomt kostbare vervanging op een later moment.' },
       { icon: 'layout-panel-left', t: 'Beglazing & HR++', d: 'Wij vervangen uw glas en adviseren u over isolerende beglazing voor directe energiebesparing.' },
       { icon: 'palette', t: 'Kleur- en onderhoudsadvies', d: 'Een helder meerjarenplan voor kleurbehoud en onderhoud op het juiste moment.' },
     ],
@@ -45,7 +45,7 @@ const DISCIPLINES = [
     onderdeelVan: 'Everts. Onderhoud & renovatie',
     photo: '/assets/everts-foto-dak-plat.jpg', photoPos: 'center 45%',
     lead: 'Plat- en hellend dakwerk, onderhoud, inspectie en vervanging. Dakdekken doen we volledig in eigen huis, met eigen dakdekkers.',
-    intro: 'Een dak doet zijn werk pas echt goed als u er niet aan hoeft te denken. Daarom inspecteren we proactief, pakken we kleine gebreken direct aan en houden we de afwatering op orde. Dak onderhoud en dakdekken hebben we volledig in eigen beheer, waardoor u niet hoeft te schakelen met een aparte partij. Het dak hoort er gewoon bij.',
+    intro: 'Een dak doet zijn werk pas echt goed als u er niet aan hoeft te denken. Daarom inspecteren we proactief, pakken we kleine gebreken direct aan en houden we de afwatering op orde. Dakonderhoud en dakdekken hebben we volledig in eigen beheer, waardoor u niet hoeft te schakelen met een aparte partij. Het dak hoort er gewoon bij.',
     services: [
       { icon: 'house', t: 'Platte daken', d: 'Bitumen en EPDM, onderhoud en complete vervanging.' },
       { icon: 'triangle', t: 'Hellende daken', d: 'Pannen, leien en dakbeschot, herstel en vernieuwing.' },
@@ -66,8 +66,8 @@ const DISCIPLINES = [
     intro: 'Niet elk klusje hoeft een project te zijn. Voor het kleine, dagelijkse werk is er de Everts Servicedesk: één meldpunt waar u terecht kunt voor reparaties, mutatieonderhoud en spoedgevallen. We pakken het snel op en houden u op de hoogte, zodat u er zelf geen omkijken naar heeft.',
     services: [
       { icon: 'wrench', t: 'Dagelijks onderhoud', d: 'Kleine reparaties en klussen die geen uitgebreid traject vragen, maar wel een vakkundige aanpak.' },
-      { icon: 'door-open', t: 'Mutatie onderhoud', d: 'Woningen snel weer verhuurklaar maken bij een huurderswisseling.' },
-      { icon: 'siren', t: 'Spoed reparaties', d: 'Bij calamiteiten staan we snel ter plaatse om schade te beperken en erger te voorkomen.' },
+      { icon: 'door-open', t: 'Mutatieonderhoud', d: 'Woningen snel weer verhuurklaar maken bij een huurderswisseling.' },
+      { icon: 'siren', t: 'Spoedreparaties', d: 'Bij calamiteiten staan we snel ter plaatse om schade te beperken en erger te voorkomen.' },
       { icon: 'square', t: 'Glasschade', d: 'Vervanging van gebroken ruiten, vaak nog dezelfde dag geregeld.' },
       { icon: 'phone-call', t: 'Eén meldpunt', d: 'Eén telefoonnummer en aanspreekpunt voor al uw kleine onderhoud.' },
       { icon: 'clipboard-check', t: 'Heldere afhandeling', d: 'U weet wat er gebeurt, wanneer het werk klaar is en wat het kost.' },
