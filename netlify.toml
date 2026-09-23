@@ -2,6 +2,19 @@
 [build]
   publish = "."
 
+# Oud domein: behoud het pad bij de permanente verhuizing.
+[[redirects]]
+  from = "http://www.evertsgroep.nl/*"
+  to = "https://www.wijzijneverts.nl/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.evertsgroep.nl/*"
+  to = "https://www.wijzijneverts.nl/:splat"
+  status = 301
+  force = true
+
 # Nette beveiligingsheaders
 [[headers]]
   for = "/*"
