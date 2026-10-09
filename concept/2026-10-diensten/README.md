@@ -1,11 +1,13 @@
 # Everts conceptpagina’s — oktober 2026
 
-Browserpreview van de gecontroleerde conceptteksten voor renovaties, mutatieonderhoud, verduurzaming en ZEP voor VvE’s.
+Browserpreview van de gecontroleerde conceptteksten voor renovaties, mutatieonderhoud, verduurzaming en ZEP voor VvE’s. Het ontwerp volgt de drie getoonde mockups: fotokaarten, compacte beeld/tekstblokken, genummerde stappen met iconen, bewonersbeelden en CTA’s met een foto.
 
-Start bij `/concept/2026-10-diensten/`. De vier pagina’s zijn onderling bereikbaar via de conceptnavigatie. De gewone navigatie, homepage en sitemap verwijzen niet naar deze map.
+Start bij `/concept/2026-10-diensten/`. De pagina’s zijn onderling bereikbaar via het overzicht en de conceptnavigatie onderaan. De gewone homepage, navigatie en sitemap verwijzen niet naar deze map.
 
-Alle HTML-pagina’s hebben `noindex, nofollow, noarchive`; `_headers` voegt dezelfde instructie en `Cache-Control: no-store` toe voor de conceptmap. Dit is geen toegangsbeveiliging. De repository is openbaar en de preview is toegankelijk voor wie de link heeft.
+Alle HTML-pagina’s hebben `noindex, nofollow, noarchive`; `_headers` voegt dezelfde instructie en `Cache-Control: no-store` toe. Dit is geen toegangsbeveiliging: de repository en de link zijn openbaar.
 
-De pagina’s gebruiken de bestaande logo’s en fonts. De hoofdafbeeldingen en overzichtskaarten gebruiken drie losse AI-conceptbeelden, zonder webtekst gereconstrueerd uit de eerder getoonde mockups. Ze zijn als WebP opgeslagen in `images/`. Dit zijn geen foto’s van echte Everts-projecten of medewerkers; dit staat ook in de previewfooter. De teksten zijn concepten; de bedrijfsbeloften en daadwerkelijke dienstverlening vragen interne bevestiging. Bedragen voor ZEP zijn gecontroleerd op 9 oktober 2026 en gekoppeld aan officiële bronnen en voorwaarden.
+De bestaande logo’s en Montserrat/Inter-fonts worden gebruikt. De losse foto’s zijn met ImageGen op basis van de mockups gereconstrueerd, als WebP opgeslagen in `images/`. De previewfooter vermeldt dat ze geen echte Everts-projecten of medewerkers tonen. De iconen zijn Tabler Icons (MIT); de bouwhelm komt uit Phosphor Icons (MIT). Licenties staan in `icons/`.
 
-Deze wijziging is uitsluitend bedoeld voor een previewbranch/Deploy Preview. Niet samenvoegen met `main` totdat publicatie is besloten. Er zijn geen productiepagina’s of formulieren aangepast.
+De zichtbare tekst is compacter gezet; technische en juridische toelichting blijft beschikbaar via native, toetsenbordbedienbare `details`/`summary`-blokken. De ZEP-verdieping bevat de volledige gecontroleerde voorwaarden en bronlinks. Bedragen zijn gecontroleerd op 9 oktober 2026. Het daadwerkelijke dienstenaanbod vraagt interne bevestiging.
+
+Alleen voor de previewbranch/Deploy Preview. Niet samenvoegen met `main` voordat publicatie is besloten. Productiepagina’s, formulieren en de sitemap zijn ongewijzigd.
