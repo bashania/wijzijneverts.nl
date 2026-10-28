@@ -63,7 +63,7 @@ function Diensten({ onNav }) {
             <Eyebrow light>Wat we doen</Eyebrow>
             <h1 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: 'clamp(34px,5.4vw,54px)', letterSpacing: '-.02em', lineHeight: 1.03, margin: '0 0 20px', textWrap: 'balance' }}>Vier disciplines, één aanspreekpunt</h1>
             <p style={{ fontSize: 'clamp(17px,2.2vw,20px)', lineHeight: 1.55, color: 'rgba(255,255,255,.92)', margin: '0 0 30px', maxWidth: 560 }}>
-              Renovatie, verduurzaming, mutatieonderhoud en planmatig onderhoud, uitgevoerd door onze vier vakgebieden. U hoeft niet te schakelen tussen partijen, dat doen wij. Van advies tot oplevering.
+              Planmatig onderhoud, renovatie, verduurzaming en mutatieonderhoud, uitgevoerd door onze vier vakgebieden. U hoeft niet te schakelen tussen partijen, dat doen wij. Van advies tot oplevering.
             </p>
             <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap' }}>
               <Button size="lg" variant="white" iconRight="arrow-right" onClick={() => onNav('contact')}>Maak een afspraak</Button>
@@ -94,7 +94,7 @@ function Diensten({ onNav }) {
             <Eyebrow>Uw opgave</Eyebrow>
             <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 'clamp(26px,3.6vw,36px)', letterSpacing: '-.015em', margin: 0, color: 'var(--fg1)' }}>Waar kunnen we u mee helpen?</h2>
           </div>
-          <div className="evt-grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 20 }}>
+          <div className="evt-grid-4" style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 20 }}>
             {OPGAVEN.filter((o) => o.kaart).map((o) => (
               <a key={o.slug} href={EVT_URL('opgave', o.slug)} onClick={(e) => { e.preventDefault(); onNav('opgave', o.slug); }}
                 style={{ background: '#fff', border: '1px solid var(--line-200)', borderRadius: 'var(--radius-lg)', boxShadow: 'var(--shadow-md)', padding: 28, display: 'flex', flexDirection: 'column', gap: 14, textDecoration: 'none', transition: 'box-shadow .15s, transform .15s' }}

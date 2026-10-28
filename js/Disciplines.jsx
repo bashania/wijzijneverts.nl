@@ -11,12 +11,12 @@ const DISCIPLINES = [
     lead: 'Planmatig binnen- en buitenschilderwerk dat uw vastgoed beschermt en jaar na jaar in goede staat houdt. Het vak waarmee we in 1922 begonnen en dat we nog elke dag verder verfijnen.',
     intro: 'Een gevel die er goed bij staat, is meer dan mooi. Het is de eerste bescherming van uw vastgoed tegen weer en wind. Met een vaste onderhoudscyclus houden we gebouwen in optimale staat en voorkomen we dat klein onderhoud uitgroeit tot groot herstel. Onze schilders kennen uw panden door en door en signaleren onderhoudsbehoeften ruim voordat ze een probleem worden.',
     services: [
-      { icon: 'paint-roller', t: 'Buitenschilderwerk', d: 'Planmatig schilderwerk aan gevels, kozijnen en houtwerk volgens een vaste cyclus.' },
+      { icon: 'paint-roller', t: 'Buitenschilderwerk', d: 'Planmatig schilderwerk aan gevels, kozijnen en houtwerk volgens een vaste cyclus.', opgave: 'planmatig-onderhoud' },
       { icon: 'home', t: 'Binnenschilderwerk', d: 'Trappenhuizen, gemeenschappelijke ruimtes en woningen: zorgvuldig geschilderd, met minimale overlast en respect voor bewoners.' },
       { icon: 'droplets', t: 'Gevelreiniging & impregneren', d: 'Reinigen, herstellen en beschermen van metsel- en pleisterwerk tegen vocht.' },
       { icon: 'square-pen', t: 'Kozijnonderhoud & houtrotherstel', d: 'Vroegtijdig herstel van houtrot voorkomt kostbare vervanging op een later moment.' },
       { icon: 'layout-panel-left', t: 'Beglazing & HR++', d: 'Wij vervangen uw glas en adviseren u over isolerende beglazing voor directe energiebesparing.', opgave: 'verduurzaming' },
-      { icon: 'palette', t: 'Kleur- en onderhoudsadvies', d: 'Een helder meerjarenplan voor kleurbehoud en onderhoud op het juiste moment.' },
+      { icon: 'palette', t: 'Kleur- en onderhoudsadvies', d: 'Een helder meerjarenplan voor kleurbehoud en onderhoud op het juiste moment.', opgave: 'planmatig-onderhoud' },
     ],
   },
   {
@@ -49,7 +49,7 @@ const DISCIPLINES = [
     services: [
       { icon: 'house', t: 'Platte daken', d: 'Bitumen en EPDM, onderhoud en complete vervanging.' },
       { icon: 'triangle', t: 'Hellende daken', d: 'Pannen, leien en dakbeschot, herstel en vernieuwing.' },
-      { icon: 'search-check', t: 'Dakinspectie', d: 'Periodieke controle die gebreken signaleert voor ze schade veroorzaken.' },
+      { icon: 'search-check', t: 'Dakinspectie', d: 'Periodieke controle die gebreken signaleert voor ze schade veroorzaken.', opgave: 'planmatig-onderhoud' },
       { icon: 'waves', t: 'Dakgoten & afvoer', d: 'Reinigen en herstellen van goten en hemelwaterafvoer.' },
       { icon: 'siren', t: 'Spoedherstel lekkage', d: 'Snel ter plaatse bij daklekkage, zodat de schade beperkt blijft.' },
       { icon: 'leaf', t: 'Dakisolatie', d: 'Isoleren bij vervanging, voor lagere energiekosten en meer comfort.', opgave: 'verduurzaming' },
@@ -163,7 +163,7 @@ function DisciplinePage({ slug, onNav }) {
                 <div style={{ width: 46, height: 46, borderRadius: 12, background: 'var(--everts-green-100)', color: 'var(--everts-logo-green)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 16 }}><Icon name={s.icon} size={23} /></div>
                 <div style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 17, color: 'var(--fg1)', marginBottom: 8 }}>{s.t}</div>
                 <p style={{ fontSize: 14, lineHeight: 1.6, color: 'var(--fg3)', margin: 0 }}>{s.d}</p>
-                {s.opgave && <a href={EVT_URL('opgave', s.opgave)} onClick={(e) => { e.preventDefault(); onNav('opgave', s.opgave); }} style={{ display: 'inline-flex', alignItems: 'center', gap: 7, marginTop: 14, fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: 13.5, color: 'var(--everts-green)', textDecoration: 'none' }}>Lees meer over {s.opgave} <Icon name="arrow-right" size={15} /></a>}
+                {s.opgave && <a href={EVT_URL('opgave', s.opgave)} onClick={(e) => { e.preventDefault(); onNav('opgave', s.opgave); }} style={{ display: 'inline-flex', alignItems: 'center', gap: 7, marginTop: 14, fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: 13.5, color: 'var(--everts-green)', textDecoration: 'none' }}>Lees meer over {OPGAVEN.find((o) => o.slug === s.opgave).nav.toLowerCase()} <Icon name="arrow-right" size={15} /></a>}
               </div>
             ))}
           </div>
