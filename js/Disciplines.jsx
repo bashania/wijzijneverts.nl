@@ -11,12 +11,12 @@ const DISCIPLINES = [
     lead: 'Planmatig binnen- en buitenschilderwerk dat uw vastgoed beschermt en jaar na jaar in goede staat houdt. Het vak waarmee we in 1922 begonnen en dat we nog elke dag verder verfijnen.',
     intro: 'Een gevel die er goed bij staat, is meer dan mooi. Het is de eerste bescherming van uw vastgoed tegen weer en wind. Met een vaste onderhoudscyclus houden we gebouwen in optimale staat en voorkomen we dat klein onderhoud uitgroeit tot groot herstel. Onze schilders kennen uw panden door en door en signaleren onderhoudsbehoeften ruim voordat ze een probleem worden.',
     services: [
-      { icon: 'paint-roller', t: 'Buitenschilderwerk', d: 'Planmatig schilderwerk aan gevels, kozijnen en houtwerk volgens een vaste cyclus.' },
+      { icon: 'paint-roller', t: 'Buitenschilderwerk', d: 'Planmatig schilderwerk aan gevels, kozijnen en houtwerk volgens een vaste cyclus.', opgave: 'planmatig-onderhoud' },
       { icon: 'home', t: 'Binnenschilderwerk', d: 'Trappenhuizen, gemeenschappelijke ruimtes en woningen: zorgvuldig geschilderd, met minimale overlast en respect voor bewoners.' },
       { icon: 'droplets', t: 'Gevelreiniging & impregneren', d: 'Reinigen, herstellen en beschermen van metsel- en pleisterwerk tegen vocht.' },
       { icon: 'square-pen', t: 'Kozijnonderhoud & houtrotherstel', d: 'Vroegtijdig herstel van houtrot voorkomt kostbare vervanging op een later moment.' },
-      { icon: 'layout-panel-left', t: 'Beglazing & HR++', d: 'Wij vervangen uw glas en adviseren u over isolerende beglazing voor directe energiebesparing.' },
-      { icon: 'palette', t: 'Kleur- en onderhoudsadvies', d: 'Een helder meerjarenplan voor kleurbehoud en onderhoud op het juiste moment.' },
+      { icon: 'layout-panel-left', t: 'Beglazing & HR++', d: 'Wij vervangen uw glas en adviseren u over isolerende beglazing voor directe energiebesparing.', opgave: 'verduurzaming' },
+      { icon: 'palette', t: 'Kleur- en onderhoudsadvies', d: 'Een helder meerjarenplan voor kleurbehoud en onderhoud op het juiste moment.', opgave: 'planmatig-onderhoud' },
     ],
   },
   {
@@ -33,8 +33,8 @@ const DISCIPLINES = [
       { icon: 'hard-hat', t: 'Betonreparatie', d: 'Herstel van betonschade en bescherming tegen verdere aantasting.' },
       { icon: 'hammer', t: 'Timmer- en houtwerk', d: 'Onderhoud en vervanging van houten gevel-, dak- en kozijndelen.' },
       { icon: 'frame', t: 'Kozijnvervanging', d: 'Vervanging van kozijnen in hout, kunststof of aluminium, inclusief beglazing.' },
-      { icon: 'blocks', t: 'Renovatie & verbouwing', d: 'Grotere ingrepen die de waarde behouden en de levensduur van uw vastgoed verlengen.' },
-      { icon: 'leaf', t: 'Verduurzaming', d: 'Advies over isolatie en energiebesparende maatregelen is een vast onderdeel van onze aanpak.' },
+      { icon: 'blocks', t: 'Renovatie & verbouwing', d: 'Grotere ingrepen die de waarde behouden en de levensduur van uw vastgoed verlengen.', opgave: 'renovatie' },
+      { icon: 'leaf', t: 'Verduurzaming', d: 'Advies over isolatie en energiebesparende maatregelen is een vast onderdeel van onze aanpak.', opgave: 'verduurzaming' },
     ],
   },
   {
@@ -49,10 +49,10 @@ const DISCIPLINES = [
     services: [
       { icon: 'house', t: 'Platte daken', d: 'Bitumen en EPDM, onderhoud en complete vervanging.' },
       { icon: 'triangle', t: 'Hellende daken', d: 'Pannen, leien en dakbeschot, herstel en vernieuwing.' },
-      { icon: 'search-check', t: 'Dakinspectie', d: 'Periodieke controle die gebreken signaleert voor ze schade veroorzaken.' },
+      { icon: 'search-check', t: 'Dakinspectie', d: 'Periodieke controle die gebreken signaleert voor ze schade veroorzaken.', opgave: 'planmatig-onderhoud' },
       { icon: 'waves', t: 'Dakgoten & afvoer', d: 'Reinigen en herstellen van goten en hemelwaterafvoer.' },
       { icon: 'siren', t: 'Spoedherstel lekkage', d: 'Snel ter plaatse bij daklekkage, zodat de schade beperkt blijft.' },
-      { icon: 'leaf', t: 'Dakisolatie', d: 'Isoleren bij vervanging, voor lagere energiekosten en meer comfort.' },
+      { icon: 'leaf', t: 'Dakisolatie', d: 'Isoleren bij vervanging, voor lagere energiekosten en meer comfort.', opgave: 'verduurzaming' },
     ],
   },
   {
@@ -61,12 +61,13 @@ const DISCIPLINES = [
     nav: 'Everts Servicedesk',
     title: 'Everts Servicedesk',
     onderdeelVan: 'Everts Servicedesk',
+    werkwijze: 'Eén melding, zonder offertetraject',
     photo: '/assets/everts-foto-servicedesk.jpg', photoPos: 'center 50%',
     lead: 'Klein dagelijks onderhoud, mutatiewerk en spoedreparaties. Eén melding is genoeg, de rest regelen wij, zonder uitgebreid offertetraject.',
     intro: 'Niet elk klusje hoeft een project te zijn. Voor het kleine, dagelijkse werk is er de Everts Servicedesk: één meldpunt waar u terecht kunt voor reparaties, mutatieonderhoud en spoedgevallen. We pakken het snel op en houden u op de hoogte, zodat u er zelf geen omkijken naar heeft.',
     services: [
       { icon: 'wrench', t: 'Dagelijks onderhoud', d: 'Kleine reparaties en klussen die geen uitgebreid traject vragen, maar wel een vakkundige aanpak.' },
-      { icon: 'door-open', t: 'Mutatieonderhoud', d: 'Woningen snel weer verhuurklaar maken bij een huurderswisseling.' },
+      { icon: 'door-open', t: 'Mutatieonderhoud', d: 'Woningen snel weer verhuurklaar maken bij een huurderswisseling.', opgave: 'mutatieonderhoud' },
       { icon: 'siren', t: 'Spoedreparaties', d: 'Bij calamiteiten staan we snel ter plaatse om schade te beperken en erger te voorkomen.' },
       { icon: 'square', t: 'Glasschade', d: 'Vervanging van gebroken ruiten, vaak nog dezelfde dag geregeld.' },
       { icon: 'phone-call', t: 'Eén meldpunt', d: 'Eén telefoonnummer en aanspreekpunt voor al uw kleine onderhoud.' },
@@ -118,7 +119,7 @@ function DisciplinePage({ slug, onNav }) {
             <h1 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: 'clamp(32px,5.2vw,50px)', letterSpacing: '-.02em', lineHeight: 1.04, margin: '0 0 18px' }}>{d.title}</h1>
             <p style={{ fontSize: 'clamp(17px,2.2vw,20px)', lineHeight: 1.55, color: 'rgba(255,255,255,.92)', margin: '0 0 30px', maxWidth: 560 }}>{d.lead}</p>
             <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap' }}>
-              <Button size="lg" variant="white" iconRight="arrow-right" onClick={() => onNav('contact')}>Maak een afspraak</Button>
+              <Button size="lg" variant="white" iconRight="arrow-right" onClick={() => onNav('contact', d.nav)}>Maak een afspraak</Button>
               <Button size="lg" variant="white" icon="phone-call" as="a" href="tel:0703012580">070 301 25 80</Button>
             </div>
           </div>
@@ -135,7 +136,7 @@ function DisciplinePage({ slug, onNav }) {
           </div>
           <aside style={{ background: 'var(--bg2)', border: '1px solid var(--line-200)', borderRadius: 'var(--radius-xl)', padding: 26 }}>
             <div style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 12.5, letterSpacing: '.08em', textTransform: 'uppercase', color: 'var(--everts-green)', marginBottom: 14 }}>Goed om te weten</div>
-            {[['layers', 'Vakgebied', d.nav], ['user-round', 'Aanspreekpunt', 'Eén vaste contactpersoon'], ['repeat', 'Werkwijze', 'Planmatig, vaste onderhoudscyclus'], ['map-pin', 'Werkgebied', 'Zuid-Holland e.o.']].map(([ic, k, v]) => (
+            {[['layers', 'Vakgebied', d.nav], ['user-round', 'Aanspreekpunt', 'Eén vaste contactpersoon'], ['repeat', 'Werkwijze', d.werkwijze || 'Planmatig, vaste onderhoudscyclus'], ['map-pin', 'Werkgebied', 'Zuid-Holland e.o.']].map(([ic, k, v]) => (
               <div key={k} style={{ display: 'flex', gap: 12, padding: '11px 0', borderBottom: '1px solid var(--line-100)' }}>
                 <span style={{ color: 'var(--everts-logo-green)', flex: 'none', marginTop: 1 }}><Icon name={ic} size={18} /></span>
                 <div>
@@ -144,7 +145,7 @@ function DisciplinePage({ slug, onNav }) {
                 </div>
               </div>
             ))}
-            <div style={{ marginTop: 18 }}><Button full iconRight="arrow-right" onClick={() => onNav('contact')}>Plan een inspectie</Button></div>
+            <div style={{ marginTop: 18 }}><Button full iconRight="arrow-right" onClick={() => onNav('contact', d.nav)}>Plan een inspectie</Button></div>
           </aside>
         </div>
       </section>
@@ -162,6 +163,7 @@ function DisciplinePage({ slug, onNav }) {
                 <div style={{ width: 46, height: 46, borderRadius: 12, background: 'var(--everts-green-100)', color: 'var(--everts-logo-green)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 16 }}><Icon name={s.icon} size={23} /></div>
                 <div style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 17, color: 'var(--fg1)', marginBottom: 8 }}>{s.t}</div>
                 <p style={{ fontSize: 14, lineHeight: 1.6, color: 'var(--fg3)', margin: 0 }}>{s.d}</p>
+                {s.opgave && <a href={EVT_URL('opgave', s.opgave)} onClick={(e) => { e.preventDefault(); onNav('opgave', s.opgave); }} style={{ display: 'inline-flex', alignItems: 'center', gap: 7, marginTop: 14, fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: 13.5, color: 'var(--everts-green)', textDecoration: 'none' }}>Lees meer over {OPGAVEN.find((o) => o.slug === s.opgave).nav.toLowerCase()} <Icon name="arrow-right" size={15} /></a>}
               </div>
             ))}
           </div>
@@ -231,7 +233,7 @@ function DisciplinePage({ slug, onNav }) {
         <div style={{ position: 'relative', maxWidth: 1200, margin: '0 auto', padding: '72px clamp(20px,4vw,32px)', textAlign: 'center', color: '#fff' }}>
           <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: 'clamp(26px,4vw,38px)', letterSpacing: '-.02em', margin: '0 0 14px' }}>Benieuwd wat we voor uw vastgoed kunnen betekenen?</h2>
           <p style={{ fontSize: 18, color: 'rgba(255,255,255,.88)', maxWidth: 540, margin: '0 auto 26px' }}>Vraag vrijblijvend een inspectie aan. U krijgt eerlijk advies, geen verkooppraatje.</p>
-          <Button size="lg" variant="white" iconRight="arrow-right" onClick={() => onNav('contact')}>Plan een inspectie</Button>
+          <Button size="lg" variant="white" iconRight="arrow-right" onClick={() => onNav('contact', d.nav)}>Plan een inspectie</Button>
         </div>
       </section>
     </div>

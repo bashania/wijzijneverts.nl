@@ -15,6 +15,12 @@
   status = 301
   force = true
 
+# Oude conceptlinks (oktober 2026) naar de definitieve pagina's.
+[[redirects]]
+  from = "/concept/2026-10-diensten/*"
+  to = "/wat-we-doen/"
+  status = 301
+
 # Nette beveiligingsheaders
 [[headers]]
   for = "/*"

@@ -153,7 +153,7 @@ function Over() {
 }
 
 // ---------- CONTACT ----------
-function Contact() {
+function Contact({ onderwerp }) {
   return (
     <div>
       <PageHero eyebrow="Contact" title="Plan een vrijblijvende inspectie" sub="Bel ons of laat uw gegevens achter. U krijgt eerlijk advies, geen verkooppraatje." />
@@ -187,7 +187,7 @@ function Contact() {
             <div style={{ marginTop: 24 }}><Photo src="/assets/everts-foto-team.jpg" alt="Vakmensen van Everts op locatie" h={400} pos="center 20%" /></div>
           </div>
           <div style={{ background: 'var(--bg2)', border: '1px solid var(--line-200)', borderRadius: 'var(--radius-xl)', padding: 32 }}>
-            <ContactForm />
+            <ContactForm onderwerp={onderwerp} />
           </div>
         </div>
       </section>
@@ -205,9 +205,13 @@ function Field({ label, ...rest }) {
     </div>
   );
 }
-function ContactForm() {
+const ONDERWERPEN = ['Planmatig onderhoud', 'Renovatie', 'Verduurzaming', 'ZEP voor VvE’s', 'Mutatieonderhoud', 'Schilderwerk & gevel', 'Bouwkundig onderhoud', 'Dakdekken', 'Everts Servicedesk', 'MJOP-advies', 'Iets anders'];
+
+function ContactForm({ onderwerp }) {
   const [sent, setSent] = useState(false);
   const [err, setErr] = useState(false);
+  // Komt de bezoeker via een knop op een dienstpagina, dan staat het onderwerp al in de URL.
+  const gekozen = onderwerp || new URLSearchParams(window.location.search).get('onderwerp');
   if (sent) return (
     <div style={{ textAlign: 'center', padding: '40px 0' }}>
       <div style={{ width: 56, height: 56, borderRadius: 999, background: 'var(--success-bg)', color: 'var(--success)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 18px' }}><Icon name="check" size={28} /></div>
@@ -233,8 +237,9 @@ function ContactForm() {
       <Field label="E-mailadres" name="email" type="email" placeholder="naam@organisatie.nl" required />
       <div style={{ marginBottom: 16 }}>
         <label style={{ fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: 13.5, color: 'var(--fg2)', display: 'block', marginBottom: 6 }}>Waar gaat het over?</label>
-        <select name="onderwerp" style={{ width: '100%', boxSizing: 'border-box', fontFamily: 'var(--font-body)', fontSize: 15, color: 'var(--fg1)', padding: '11px 13px', borderRadius: 'var(--radius-md)', border: '1.5px solid var(--line-200)', background: '#fff' }}>
-          <option>Schilderwerk &amp; gevel</option><option>Bouwkundig onderhoud</option><option>Dakdekken</option><option>Everts Servicedesk</option><option>MJOP-advies</option>
+        <select name="onderwerp" required defaultValue={ONDERWERPEN.includes(gekozen) ? gekozen : ''} style={{ width: '100%', boxSizing: 'border-box', fontFamily: 'var(--font-body)', fontSize: 15, color: 'var(--fg1)', padding: '11px 13px', borderRadius: 'var(--radius-md)', border: '1.5px solid var(--line-200)', background: '#fff' }}>
+          <option value="" disabled>Kies een onderwerp</option>
+          {ONDERWERPEN.map((o) => <option key={o}>{o}</option>)}
         </select>
       </div>
       {err && <p style={{ fontSize: 13.5, color: 'var(--danger)', margin: '0 0 14px', lineHeight: 1.5 }}>Er ging iets mis bij het versturen. Probeer het opnieuw of mail ons direct op <a href="mailto:info@everts.chat" style={{ color: 'var(--danger)', fontWeight: 600 }}>info@everts.chat</a>.</p>}

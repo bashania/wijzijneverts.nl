@@ -89,10 +89,12 @@ function EVT_URL(page, slug = null) {
     case 'over': return 'over-everts/';
     case 'diensten': return 'wat-we-doen/';
     case 'discipline': return 'wat-we-doen/' + slug + '/';
+    case 'opgave': return 'wat-we-doen/' + slug + '/';
     case 'werken': return 'werken-bij/';
     case 'vacature': return 'werken-bij/' + slug + '/';
     case 'solliciteren': return slug ? 'solliciteren/' + slug + '/' : 'solliciteren/';
-    case 'contact': return 'contact/';
+    // Bij contact is de slug het onderwerp dat het formulier alvast invult.
+    case 'contact': return slug ? 'contact/?onderwerp=' + encodeURIComponent(slug) : 'contact/';
     case 'privacy': return 'privacy/';
     default: return './';
   }
