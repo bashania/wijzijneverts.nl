@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<base href="../../../">
+<script>window.__EVT_STATIC__ = true; window.__EVT_ROUTE__ = { page: 'opgave', slug: 'verduurzaming/zep-vve' };</script>
+<title>ZEP voor VvE's | Everts. Onderhoud &amp; Renovatie</title>
+<meta name="description" content="Groot onderhoud in het MJOP? Onderzoek of een Zeer Energiezuinig Pakket (ZEP) past, met subsidie via de SVVE en financiering via het Nationaal Warmtefonds.">
+<meta name="theme-color" content="#154E2F">
+<link rel="canonical" href="https://wijzijneverts.nl/wat-we-doen/verduurzaming/zep-vve/">
+<!-- Open Graph / social sharing. -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="nl_NL">
+<meta property="og:url" content="https://wijzijneverts.nl/wat-we-doen/verduurzaming/zep-vve/">
+<meta property="og:site_name" content="Everts. Onderhoud &amp; Renovatie">
+<meta property="og:title" content="ZEP voor VvE's | Everts. Onderhoud &amp; Renovatie">
+<meta property="og:description" content="Groot onderhoud in het MJOP? Onderzoek of een Zeer Energiezuinig Pakket (ZEP) past, met subsidie via de SVVE en financiering via het Nationaal Warmtefonds.">
+<meta property="og:image" content="https://wijzijneverts.nl/assets/everts-achtergrond.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ZEP voor VvE's | Everts. Onderhoud &amp; Renovatie">
+<meta name="twitter:description" content="Groot onderhoud in het MJOP? Onderzoek of een Zeer Energiezuinig Pakket (ZEP) past, met subsidie via de SVVE en financiering via het Nationaal Warmtefonds.">
+<meta name="twitter:image" content="https://wijzijneverts.nl/assets/everts-achtergrond.png">
+<link rel="icon" type="image/png" href="/assets/everts-beeldmerk.png">
+<link rel="stylesheet" href="/colors_and_type.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+<style>
+  html, body { margin: 0; background: var(--bg1); }
+  body { font-family: var(--font-body); color: var(--fg2); }
+  * { box-sizing: border-box; }
+  a { color: var(--everts-green); }
+  img { max-width: 100%; }
+  .evt-show-sm { display: none; }
+  summary::-webkit-details-marker { display: none; }
+
+  @media (max-width: 900px) {
+    .evt-nav-desktop, .evt-cta-desktop { display: none !important; }
+    .evt-nav-burger { display: flex !important; }
+    .evt-grid-4 { grid-template-columns: repeat(2, 1fr) !important; gap: 32px !important; }
+    .evt-grid-3 { grid-template-columns: repeat(2, 1fr) !important; gap: 16px !important; }
+    .evt-values, .evt-2col, .evt-detail { grid-template-columns: 1fr !important; gap: 40px !important; }
+    .evt-detail aside { position: static !important; }
+    .evt-dienst { grid-template-columns: 1fr !important; gap: 24px !important; }
+    .evt-footer-grid { grid-template-columns: 1fr 1fr !important; gap: 32px !important; }
+  }
+  @media (max-width: 600px) {
+    .evt-grid-4 { grid-template-columns: 1fr !important; }
+    .evt-grid-3 { grid-template-columns: 1fr !important; }
+    .evt-grid-2 { grid-template-columns: 1fr !important; }
+    .evt-footer-grid { grid-template-columns: 1fr !important; }
+    .evt-2col-form { grid-template-columns: 1fr !important; }
+    .evt-hide-sm { display: none !important; }
+    .evt-show-sm { display: inline-flex !important; }
+  }
+</style>
+</head>
+<body>
+<div id="root"></div>
+
+<!-- Verborgen formulieren puur zodat Netlify Forms ze bij de build detecteert.
+     De zichtbare formulieren worden door React gerenderd en posten via fetch naar deze namen. -->
+<form name="contact" netlify-honeypot="bot-field" data-netlify="true" hidden>
+  <input type="text" name="naam" />
+  <input type="text" name="organisatie" />
+  <input type="email" name="email" />
+  <input type="text" name="onderwerp" />
+  <input type="text" name="bot-field" />
+</form>
+<form name="sollicitatie" netlify-honeypot="bot-field" data-netlify="true" enctype="multipart/form-data" hidden>
+  <input type="text" name="voornaam" />
+  <input type="text" name="achternaam" />
+  <input type="email" name="email" />
+  <input type="tel" name="telefoon" />
+  <input type="text" name="functie" />
+  <input type="text" name="functie-titel" />
+  <textarea name="motivatie"></textarea>
+  <input type="file" name="cv" />
+  <input type="text" name="bot-field" />
+</form>
+<script type="text/babel" src="/js/Components.jsx"></script>
+<script type="text/babel" src="/js/Chrome.jsx"></script>
+<script type="text/babel" src="/js/Home.jsx"></script>
+<script type="text/babel" src="/js/Pages.jsx"></script>
+<script type="text/babel" src="/js/WatWeDoen.jsx"></script>
+<script type="text/babel" src="/js/Disciplines.jsx"></script>
+<script type="text/babel" src="/js/Opgaven.jsx"></script>
+<script type="text/babel" src="/js/Vacatures.jsx"></script>
+<script type="text/babel">
+  const { useState, useEffect } = React;
+
+  function App() {
+    // Op de live site (statische deelpagina's) zet elke pagina zijn eigen route klaar
+    // via window.__EVT_ROUTE__ en navigeren we met echte URL's (window.__EVT_STATIC__).
+    const [route, setRoute] = useState(window.__EVT_ROUTE__ || { page: 'home', slug: null });
+    const nav = (page, slug = null) => {
+      if (window.__EVT_STATIC__) { window.location.href = EVT_URL(page, slug); return; }
+      setRoute({ page, slug }); window.scrollTo({ top: 0 });
+    };
+    useEffect(() => { if (window.lucide) window.lucide.createIcons(); });
+
+    let view;
+    switch (route.page) {
+      case 'over': view = <Over />; break;
+      case 'diensten': view = <Diensten onNav={nav} />; break;
+      case 'discipline': view = <DisciplinePage slug={route.slug} onNav={nav} />; break;
+      case 'opgave': view = <OpgavePage slug={route.slug} onNav={nav} />; break;
+      case 'werken': view = <Werken onNav={nav} />; break;
+      case 'vacature': view = <VacatureDetail slug={route.slug} onNav={nav} />; break;
+      case 'solliciteren': view = <Solliciteren slug={route.slug} onNav={nav} />; break;
+      case 'contact': view = <Contact onderwerp={route.slug} />; break;
+      case 'privacy': view = <Privacy onNav={nav} />; break;
+      default: view = <Home onNav={nav} />;
+    }
+
+    // top-nav highlight: vacancy/apply pages count as "werken"
+    const current = ['vacature', 'solliciteren'].includes(route.page) ? 'werken'
+      : ['discipline', 'opgave'].includes(route.page) ? 'diensten' : route.page;
+
+    return (
+      <React.Fragment>
+        <Header current={current} onNav={nav} />
+        {view}
+        <Footer onNav={nav} />
+      </React.Fragment>
+    );
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
+</body>
+</html>

@@ -10,6 +10,8 @@ function Header({ current, onNav }) {
     { id: 'contact', label: 'Contact' },
   ];
   const go = (id) => { setOpen(false); onNav(id); };
+  // Op de dienstpagina's is de bezoeker een opdrachtgever; elders blijft werving de hoofdknop.
+  const [ctaLabel, ctaPage] = current === 'diensten' ? ['Maak een afspraak', 'contact'] : ['Solliciteer nu', 'werken'];
   return (
     <header style={{ position: 'sticky', top: 0, zIndex: 50, background: 'rgba(255,255,255,.9)', backdropFilter: 'blur(10px)', borderBottom: '1px solid var(--line-200)' }}>
       <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 clamp(20px,4vw,32px)', height: 74, display: 'flex', alignItems: 'center', gap: 28 }}>
@@ -29,7 +31,7 @@ function Header({ current, onNav }) {
           })}
         </nav>
         <div className="evt-cta-desktop">
-          <Button size="sm" iconRight="arrow-right" onClick={() => go('werken')}>Solliciteer nu</Button>
+          <Button size="sm" iconRight="arrow-right" onClick={() => go(ctaPage)}>{ctaLabel}</Button>
         </div>
         <button className="evt-nav-burger" aria-label="Menu" onClick={() => setOpen((o) => !o)}
           style={{ display: 'none', marginLeft: 'auto', border: '1px solid var(--line-200)', background: '#fff', borderRadius: 10, width: 44, height: 44, alignItems: 'center', justifyContent: 'center', cursor: 'pointer', color: 'var(--fg1)' }}>
@@ -46,7 +48,7 @@ function Header({ current, onNav }) {
                 {it.label}
               </a>
             ))}
-            <div style={{ marginTop: 10 }}><Button full iconRight="arrow-right" onClick={() => go('werken')}>Solliciteer nu</Button></div>
+            <div style={{ marginTop: 10 }}><Button full iconRight="arrow-right" onClick={() => go(ctaPage)}>{ctaLabel}</Button></div>
           </nav>
         </div>
       )}
@@ -56,7 +58,7 @@ function Header({ current, onNav }) {
 
 function Footer({ onNav }) {
   const cols = [
-    { h: 'Wat we doen', items: [['Schilderwerk & gevel', 'discipline', 'schilderwerk'], ['Bouwkundig onderhoud', 'discipline', 'bouwkundig'], ['Dakdekken', 'discipline', 'dakdekken'], ['Everts Servicedesk', 'discipline', 'servicedesk']] },
+    { h: 'Wat we doen', items: [['Renovatie', 'opgave', 'renovatie'], ['Verduurzaming', 'opgave', 'verduurzaming'], ['Mutatieonderhoud', 'opgave', 'mutatieonderhoud'], ['Schilderwerk & gevel', 'discipline', 'schilderwerk'], ['Bouwkundig onderhoud', 'discipline', 'bouwkundig'], ['Dakdekken', 'discipline', 'dakdekken'], ['Everts Servicedesk', 'discipline', 'servicedesk']] },
     { h: 'Voor wie', items: [["VvE's", 'diensten'], ['Vastgoedeigenaren', 'diensten'], ['Woningcorporaties', 'diensten'], ['Zorg & onderwijs', 'diensten']] },
     { h: 'Everts.', items: [['Over Everts', 'over'], ['Werken bij', 'werken'], ['Contact', 'contact']] },
   ];
@@ -94,7 +96,7 @@ function Footer({ onNav }) {
       </div>
       <div style={{ borderTop: '1px solid rgba(255,255,255,.13)' }}>
         <div className="evt-footer-bottom" style={{ maxWidth: 1200, margin: '0 auto', padding: '20px clamp(20px,4vw,32px)', display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: 12, fontSize: 13, color: 'rgba(255,255,255,.6)' }}>
-          <span>Everts. Onderhoud &amp; Renovatie — De Star 3, 2266 NA Leidschendam</span>
+          <span>Everts. Onderhoud &amp; Renovatie · De Star 3, 2266 NA Leidschendam</span>
           <span style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
             <a href={EVT_URL('privacy')} onClick={(e) => { e.preventDefault(); onNav('privacy'); }} style={{ color: 'rgba(255,255,255,.6)', textDecoration: 'none' }}>Privacyverklaring</a>
             <span>T 070 301 25 80 · info@everts.chat</span>
