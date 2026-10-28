@@ -1,8 +1,56 @@
-/* Everts Website — Opgave-pagina's (Renovatie, Verduurzaming, ZEP voor VvE's, Mutatieonderhoud).
+/* Everts Website — Opgave-pagina's (Planmatig onderhoud, Renovatie, Verduurzaming, ZEP voor VvE's, Mutatieonderhoud).
    Een opgave is de vraag waarmee een opdrachtgever binnenkomt; de vakgebieden (Disciplines.jsx) voeren het werk uit.
    Elk onderwerp heeft één eigen pagina: andere pagina's noemen het kort en linken hierheen. */
 
 const OPGAVEN = [
+  {
+    slug: 'planmatig-onderhoud',
+    icon: 'calendar-check',
+    nav: 'Planmatig onderhoud',
+    label: 'Planmatig onderhoud · Schilderwerk & gevel',
+    title: 'Onderhoud op het juiste moment',
+    lead: 'Met een vaste onderhoudscyclus voorkomen we dat klein onderhoud uitgroeit tot groot herstel. Schilderwerk, gevelonderhoud en kozijnen plannen we vooruit, op basis van uw meerjarenonderhoudsplan (MJOP).',
+    kaart: 'Schilderwerk, gevelonderhoud en kozijnen volgens een vaste cyclus, op basis van uw MJOP.',
+    photo: '/assets/everts-foto-schilder.jpg', photoPos: 'center 40%', photoAlt: 'Schilder van Everts aan het werk aan een gevel',
+    knop: 'Bespreek uw onderhoudsplan', onderwerp: 'Planmatig onderhoud',
+    vakgebieden: ['schilderwerk', 'dakdekken'],
+    secties: [
+      { type: 'intro', eyebrow: 'In het kort', h: 'Kleine gebreken klein houden',
+        p: ['Een gevel die er goed bij staat, is de eerste bescherming van uw vastgoed tegen weer en wind. Met een vaste onderhoudscyclus houden we die bescherming op peil en pakken we kleine gebreken aan voordat ze groot herstel worden.',
+          'Onze schilders kennen uw panden en signaleren onderhoudsbehoeften ruim voordat ze een probleem worden. Wat over twee of drie jaar aankomt, zetten we in het plan.'],
+        feiten: [['repeat', 'Werkwijze', 'Vaste onderhoudscyclus'], ['user-round', 'Aanspreekpunt', 'Eén vaste contactpersoon'], ['paint-roller', 'Vakmanschap', 'Schildersbedrijf sinds 1922'], ['map-pin', 'Werkgebied', 'Zuid-Holland e.o.']] },
+      { type: 'kaarten', eyebrow: 'Wat we voor u doen', h: 'Schilderwerk en gevelonderhoud',
+        lead: 'Het vak waarmee we in 1922 begonnen. Onze eigen schilders doen het werk, in vaste teams.',
+        items: [
+          { icon: 'paint-roller', t: 'Buitenschilderwerk', d: 'Planmatig schilderwerk aan gevels, kozijnen en houtwerk volgens een vaste cyclus.' },
+          { icon: 'droplets', t: 'Gevelreiniging en impregneren', d: 'Reinigen, herstellen en beschermen van metsel- en pleisterwerk tegen vocht.' },
+          { icon: 'square-pen', t: 'Kozijnonderhoud en houtrotherstel', d: 'Vroegtijdig herstel van houtrot voorkomt kostbare vervanging op een later moment.' },
+          { icon: 'house', t: 'Binnenschilderwerk', d: 'Trappenhuizen en gemeenschappelijke ruimtes, in overleg gepland rond het gebruik door bewoners.' },
+        ],
+        meer: { titel: 'Ook in het onderhoudsplan', punten: [
+          ['Beglazing', 'We vervangen glas en adviseren over isolerend glas als de kozijnen toch aan de beurt zijn.'],
+          ['Dakinspectie', 'Een periodieke dakinspectie door onze eigen dakdekkers kunnen we in hetzelfde plan meenemen.'],
+          ['Kleur- en onderhoudsadvies', 'Een helder meerjarenplan voor kleurbehoud en onderhoud op het juiste moment.'],
+        ] } },
+      { type: 'stappen', eyebrow: 'Onze werkwijze', h: 'Zo houden we uw gebouw op peil',
+        items: [
+          ['Inspectie', 'We nemen het gebouw op en leggen de staat vast. Ook als de boodschap is dat iets nog jaren mee kan.'],
+          ['Onderhoudsplan', 'U krijgt een planning per onderdeel, afgestemd op uw MJOP en uw budget.'],
+          ['Uitvoering', 'Vaste teams voeren het werk uit. Meerwerk leggen we eerst aan u voor, met een prijs.'],
+          ['Oplevering en vooruitkijken', 'We leveren netjes op en denken meteen mee over wat er over een paar jaar nodig is.'],
+        ],
+        meer: { titel: 'Hoe werkt dit met een MJOP?', punten: [
+          'Een meerjarenonderhoudsplan (MJOP) laat zien welk onderhoud de komende jaren nodig is en wat het kost. Heeft u er een, dan is dat ons vertrekpunt. We toetsen het plan aan de werkelijke staat van het gebouw en melden het als iets eerder of later kan. Heeft u nog geen MJOP, dan denken we mee over een plan.',
+          'Voor een VvE leveren we de stukken die het bestuur of de ledenvergadering nodig heeft om te besluiten.',
+        ] } },
+      { type: 'fotoTekst', eyebrow: 'Voor wie', h: 'Eén vaste partij voor uw onderhoud', omgekeerd: true,
+        p: ['Planmatig onderhoud werkt het best als u er jaren mee vooruit kunt. We werken voor grotere VvE’s, vastgoedeigenaren, woningcorporaties en maatschappelijk vastgoed in Zuid-Holland.',
+          'Met een vaste partij hoeft u niet bij elke onderhoudsronde opnieuw uit te zoeken wie wat doet. Uw contactpersoon kent het gebouw.'],
+        foto: '/assets/everts-foto-hero.jpg', fotoPos: 'center 40%', alt: 'Gebouw met hoogwerker tijdens onderhoud' },
+    ],
+    ctaTitel: 'Uw onderhoud voortaan volgens plan?',
+    ctaTekst: 'Vraag een inspectie aan. U krijgt eerlijk advies over wat nu nodig is en wat kan wachten.',
+  },
   {
     slug: 'renovatie',
     icon: 'hammer',

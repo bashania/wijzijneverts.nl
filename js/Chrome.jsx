@@ -58,7 +58,7 @@ function Header({ current, onNav }) {
 
 function Footer({ onNav }) {
   const cols = [
-    { h: 'Wat we doen', items: [['Renovatie', 'opgave', 'renovatie'], ['Verduurzaming', 'opgave', 'verduurzaming'], ['Mutatieonderhoud', 'opgave', 'mutatieonderhoud'], ['Schilderwerk & gevel', 'discipline', 'schilderwerk'], ['Bouwkundig onderhoud', 'discipline', 'bouwkundig'], ['Dakdekken', 'discipline', 'dakdekken'], ['Everts Servicedesk', 'discipline', 'servicedesk']] },
+    { h: 'Wat we doen', items: [['Planmatig onderhoud', 'opgave', 'planmatig-onderhoud'], ['Renovatie', 'opgave', 'renovatie'], ['Verduurzaming', 'opgave', 'verduurzaming'], ['Mutatieonderhoud', 'opgave', 'mutatieonderhoud'], ['Schilderwerk & gevel', 'discipline', 'schilderwerk'], ['Bouwkundig onderhoud', 'discipline', 'bouwkundig'], ['Dakdekken', 'discipline', 'dakdekken'], ['Everts Servicedesk', 'discipline', 'servicedesk']] },
     { h: 'Voor wie', items: [["VvE's", 'diensten'], ['Vastgoedeigenaren', 'diensten'], ['Woningcorporaties', 'diensten'], ['Zorg & onderwijs', 'diensten']] },
     { h: 'Everts.', items: [['Over Everts', 'over'], ['Werken bij', 'werken'], ['Contact', 'contact']] },
   ];

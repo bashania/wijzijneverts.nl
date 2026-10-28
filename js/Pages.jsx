@@ -205,7 +205,7 @@ function Field({ label, ...rest }) {
     </div>
   );
 }
-const ONDERWERPEN = ['Renovatie', 'Verduurzaming', 'ZEP voor VvE’s', 'Mutatieonderhoud', 'Schilderwerk & gevel', 'Bouwkundig onderhoud', 'Dakdekken', 'Everts Servicedesk', 'MJOP-advies', 'Iets anders'];
+const ONDERWERPEN = ['Planmatig onderhoud', 'Renovatie', 'Verduurzaming', 'ZEP voor VvE’s', 'Mutatieonderhoud', 'Schilderwerk & gevel', 'Bouwkundig onderhoud', 'Dakdekken', 'Everts Servicedesk', 'MJOP-advies', 'Iets anders'];
 
 function ContactForm({ onderwerp }) {
   const [sent, setSent] = useState(false);
