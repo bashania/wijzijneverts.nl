@@ -185,19 +185,18 @@ const OPGAVEN = [
         p: ['We bekijken wat het gebouw nodig heeft en welke deskundigen moeten aansluiten. Een energieadviseur werkt de technische uitgangspunten uit. Wij brengen in kaart wat de maatregelen kosten, wat ze per woning betekenen en hoe we het werk plannen. Daarmee kan de VvE een onderbouwd besluit nemen.',
           'Past een onderdeel niet binnen de standaardvoorwaarden, bijvoorbeeld door de bouw van het complex? Dan moet apart worden beoordeeld of een gelijkwaardige oplossing of ontheffing kan. RVO beoordeelt de subsidie, het Warmtefonds de lening: twee aparte trajecten.'] },
       { type: 'financiering', eyebrow: 'Subsidie en financiering', h: 'Twee regelingen, twee aanvragen',
-        tbc: 'Te controleren voor publicatie: andere bronnen noemen lagere maxima voor de Warmtefonds-lening.',
         kaarten: [
-          { icon: 'coins', eyebrow: 'Subsidie via RVO', h: 'SVVE', bedrag: '€4.000', sub: 'bonus per woning',
-            p: ['Via de SVVE, de subsidieregeling voor verduurzaming door VvE’s, kan een VvE onder voorwaarden subsidie aanvragen bij RVO. Bij een ZEP dat aan alle toepasselijke voorwaarden voldoet, is boven op de maatregelensubsidie een bonus van €4.000 per woning mogelijk. Voor subsidiabele bouwbegeleiding bedraagt de vergoeding 50% van de kosten, tot maximaal €20.000.',
-              'Let op: de VvE moet de subsidie aanvragen voordat het werk begint. Daarna heeft de VvE normaal drie jaar vanaf de goedkeuring om het werk uit te voeren.'],
+          { icon: 'coins', eyebrow: 'Subsidie via RVO', h: 'SVVE',
+            p: ['Via de SVVE, de subsidieregeling voor verduurzaming door VvE’s, kan een VvE onder voorwaarden subsidie aanvragen bij RVO. Voor een ZEP dat aan alle voorwaarden voldoet, komt daar een extra bonus per woning bij. Ook bouwbegeleiding kan deels worden vergoed.',
+              'Let op: de VvE moet de subsidie aanvragen voordat het werk begint. Daarna geldt een vaste termijn om het werk uit te voeren.'],
             link: ['RVO: voorwaarden ZEP', 'https://www.rvo.nl/subsidies-financiering/svve/verduurzamingsmaatregelen/voorwaarden-zep'] },
-          { icon: 'landmark', eyebrow: 'Nationaal Warmtefonds', h: 'VvE Energiebespaarlening', bedrag: '€73.000', sub: 'tot dit bedrag per appartement voor een ZEP', groen: true,
-            p: ['Voor daarvoor geschikte VvE’s met minimaal acht wooneenheden vermeldt het Warmtefonds een ZEP-lening tot €73.000 per appartement. Voor ZEP+ of nul-op-de-meter (NOM) kan het maximum €95.000 per appartement zijn. Een looptijd van 30 jaar is onder voorwaarden mogelijk.',
+          { icon: 'landmark', eyebrow: 'Nationaal Warmtefonds', h: 'VvE Energiebespaarlening', groen: true,
+            p: ['Met de VvE Energiebespaarlening van het Nationaal Warmtefonds kan een VvE de maatregelen financieren. Voor een ZEP, en voor ZEP+ of nul-op-de-meter (NOM), geldt een hoger maximum per appartement dan voor losse maatregelen.',
               'De VvE sluit de lening af en die werkt door in de ledenbijdragen. Dat betekent ook financiële verplichtingen voor de leden. Bekijk daarom de maandlasten én de verwachte energiebesparing.',
               'Renteaftrek kan voor eigenaar-bewoners onder fiscale voorwaarden mogelijk zijn. Laat voor uw eigen situatie beoordelen welk deel daarvoor in aanmerking komt.'],
             link: ['Warmtefonds: voorwaarden VvE Energiebespaarlening', 'https://www.warmtefonds.nl/vve/voorwaarden-vve-energiebespaarlening'] },
         ],
-        klein: 'Bedragen gecontroleerd op 9 oktober 2026. Voorwaarden en bedragen kunnen wijzigen. De actuele regeling en het individuele besluit of leningaanbod zijn bepalend.' },
+        klein: 'De actuele bedragen en voorwaarden staan bij RVO en het Nationaal Warmtefonds. Hun regeling en het besluit of leningaanbod voor uw VvE zijn bepalend.' },
       { type: 'stappen', eyebrow: 'Zorgvuldig besluiten, helder uitvoeren', h: 'Zo komt het plan verder',
         items: [
           ['Opname en haalbaarheid', 'We bekijken het gebouw en bepalen welk specialistisch onderzoek nodig is.'],
@@ -224,8 +223,8 @@ const OPGAVEN = [
     vakgebieden: ['servicedesk'],
     secties: [
       { type: 'intro', eyebrow: 'In het kort', h: 'Vooraf vastgelegd wat verhuurklaar betekent',
-        p: ['Leegstand wilt u zo kort mogelijk houden, maar de volgende huurder moet een woning krijgen die klopt. Daarom leggen we vooraf met u vast wat verhuurklaar betekent: het afwerkingsniveau, wie wat controleert en de doorlooptijd.'],
-        tbc: 'Te bevestigen: opname binnen X werkdagen na de sleuteloverdracht, verhuurklaar binnen Y werkdagen.',
+        p: ['Leegstand wilt u zo kort mogelijk houden, maar de volgende huurder moet een woning krijgen die klopt. Daarom leggen we vooraf met u vast wat verhuurklaar betekent: het afwerkingsniveau, wie wat controleert en de planning.',
+          'Hoelang het herstel duurt, hangt af van de werkzaamheden. Wij plannen op een zo kort mogelijke leegstand.'],
         foto: '/assets/beeld-lege-woning.webp', alt: 'Lege woning, klaar voor de volgende huurder' },
       { type: 'stappen', eyebrow: 'Onze werkwijze', h: 'Zo blijft het werk overzichtelijk',
         items: [
@@ -243,9 +242,8 @@ const OPGAVEN = [
           ['sparkles', 'Schoon opleveren', 'Schoon en gecontroleerd, klaar voor de bezichtiging of de sleuteloverdracht.'],
         ],
         naast: { eyebrow: 'Goed om te weten', h: 'Grip op elke woning',
-          p: ['Per woning ziet u wat we hebben opgenomen, wat we hebben gedaan en wat het heeft gekost. Waar nodig leggen we de staat en het herstel vast met foto’s.',
+          p: ['Vooraf krijgt u per woning een opnamerapport met foto’s en kosten. Via ons klantportaal volgt u daarna de status van elke werkbon.',
             'De verhuurder beoordeelt of eventuele schade op de vertrekkende huurder kan worden verhaald.'],
-          tbc: 'Te bevestigen: in welke vorm, bijvoorbeeld een rapport per woning of een koppeling met uw onderhoudssysteem.',
           meer: { titel: 'Hoe gaan we om met schade?', punten: [
             'Eventuele schade van een vertrekkende huurder leggen we feitelijk vast. De verhuurder beoordeelt op basis van het huurcontract, de opnamerapporten en de wettelijke regels of kosten kunnen worden doorberekend.',
           ] },
@@ -433,8 +431,6 @@ function OpgSectie({ s, tint, onNav }) {
                 <div style={{ color: 'var(--everts-logo-green)', marginBottom: 16 }}><Icon name={k.icon} size={30} /></div>
                 <Eyebrow>{k.eyebrow}</Eyebrow>
                 <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 26, margin: '0 0 14px', color: 'var(--fg1)' }}>{k.h}</h3>
-                <div style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: 36, lineHeight: 1, color: 'var(--everts-logo-green)', letterSpacing: '-.02em' }}>{k.bedrag}</div>
-                <div style={{ fontSize: 14, color: 'var(--fg3)', margin: '6px 0 18px' }}>{k.sub}</div>
                 {k.p.map((t) => <p key={t} style={{ fontSize: 15, lineHeight: 1.7, color: 'var(--fg2)', margin: '0 0 12px' }}>{t}</p>)}
                 <a href={k.link[1]} target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: 6, fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: 14.5 }}>{k.link[0]} <Icon name="external-link" size={15} /></a>
               </article>
