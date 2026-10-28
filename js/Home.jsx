@@ -41,32 +41,32 @@ function TrustBar() {
 }
 
 function Services({ onNav }) {
-  const services = [
-    { slug: 'schilderwerk', icon: 'paint-roller', t: 'Schilderwerk & gevel', d: 'Planmatig buiten- en binnenschilderwerk, gevelonderhoud en kozijnherstel.' },
-    { slug: 'bouwkundig', icon: 'hard-hat', t: 'Bouwkundig onderhoud', d: 'Van houtrot en metselwerk tot complete renovatie, vakkundig uitgevoerd.' },
-    { slug: 'dakdekken', icon: 'home', t: 'Dakdekken', d: 'Plat- en hellend dakwerk, onderhoud en vervanging door eigen dakdekkers.' },
-    { slug: 'servicedesk', icon: 'headset', t: 'Everts Servicedesk', d: 'Klein dagelijks onderhoud, mutatiewerk en spoedreparaties, snel geregeld.' },
-  ];
+  // De opgaven (Opgaven.jsx) zijn de ingang; de vakgebieden staan op Wat we doen.
+  const opgaven = OPGAVEN.filter((o) => o.kaart);
   return (
     <section style={{ background: 'var(--bg2)' }}>
       <div style={{ maxWidth: 1200, margin: '0 auto', padding: '88px clamp(20px,4vw,32px)' }}>
         <div style={{ maxWidth: 620, marginBottom: 48 }}>
           <Eyebrow>Wat we doen</Eyebrow>
           <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 'clamp(28px,4vw,38px)', lineHeight: 1.12, letterSpacing: '-.015em', margin: 0, color: 'var(--fg1)' }}>
-            Volledig ontzorgd, vier disciplines onder één dak
+            Volledig ontzorgd, van onderhoud tot renovatie
           </h2>
         </div>
         <div className="evt-grid-4" style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 20 }}>
-          {services.map((s) => (
-            <div key={s.t} onClick={() => onNav('discipline', s.slug)} style={{ background: '#fff', border: '1px solid var(--line-200)', borderRadius: 'var(--radius-lg)', boxShadow: 'var(--shadow-md)', padding: 26, display: 'flex', flexDirection: 'column', gap: 14, cursor: 'pointer', transition: 'box-shadow .15s, transform .15s' }}
+          {opgaven.map((o) => (
+            <a key={o.slug} href={EVT_URL('opgave', o.slug)} onClick={(e) => { e.preventDefault(); onNav('opgave', o.slug); }} style={{ background: '#fff', border: '1px solid var(--line-200)', borderRadius: 'var(--radius-lg)', boxShadow: 'var(--shadow-md)', padding: 26, display: 'flex', flexDirection: 'column', gap: 14, textDecoration: 'none', transition: 'box-shadow .15s, transform .15s' }}
               onMouseEnter={(e) => { e.currentTarget.style.boxShadow = 'var(--shadow-lg)'; e.currentTarget.style.transform = 'translateY(-2px)'; }} onMouseLeave={(e) => { e.currentTarget.style.boxShadow = 'var(--shadow-md)'; e.currentTarget.style.transform = 'none'; }}>
-              <div style={{ width: 48, height: 48, borderRadius: 12, background: 'var(--everts-green-100)', color: 'var(--everts-logo-green)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}><Icon name={s.icon} size={24} /></div>
-              <div style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 18, color: 'var(--fg1)' }}>{s.t}</div>
-              <p style={{ fontSize: 14.5, lineHeight: 1.6, color: 'var(--fg3)', margin: 0, flex: 1 }}>{s.d}</p>
+              <div style={{ width: 48, height: 48, borderRadius: 12, background: 'var(--everts-green-100)', color: 'var(--everts-logo-green)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}><Icon name={o.icon} size={24} /></div>
+              <div style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 18, color: 'var(--fg1)' }}>{o.nav}</div>
+              <p style={{ fontSize: 14.5, lineHeight: 1.6, color: 'var(--fg3)', margin: 0, flex: 1 }}>{o.kaart}</p>
               <span style={{ display: 'flex', alignItems: 'center', gap: 7, fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: 13.5, color: 'var(--everts-green)' }}>Meer hierover <Icon name="arrow-right" size={15} /></span>
-            </div>
+            </a>
           ))}
         </div>
+        <p style={{ fontSize: 15, lineHeight: 1.6, color: 'var(--fg3)', margin: '28px 0 0' }}>
+          Het werk doen onze vier vakgebieden: schilderwerk en gevel, bouwkundig, dakdekken en de Everts Servicedesk.{' '}
+          <a href={EVT_URL('diensten')} onClick={(e) => { e.preventDefault(); onNav('diensten'); }} style={{ display: 'inline-flex', alignItems: 'center', gap: 6, fontFamily: 'var(--font-display)', fontWeight: 600, color: 'var(--everts-green)', textDecoration: 'none', whiteSpace: 'nowrap' }}>Bekijk de vakgebieden <Icon name="arrow-right" size={15} /></a>
+        </p>
       </div>
     </section>
   );
