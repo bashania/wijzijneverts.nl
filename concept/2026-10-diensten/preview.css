@@ -24,3 +24,6 @@
 
 .more li{margin-bottom:12px}.more ul,.more ol{padding-left:24px}.preparation{padding-bottom:25px}.preparation .more{margin-top:0}@media(min-width:761px) and (max-width:1100px){.service-card h3{font-size:14px;line-height:1.18}.card-content{padding-top:33px}.hero .lead{max-width:clamp(390px,46vw,630px)}}
 @media(min-width:761px){.page-mutatieonderhoud main>.intro:nth-of-type(2) .split{width:100%;max-width:1440px;grid-template-columns:62% 38%;gap:0}.page-mutatieonderhoud main>.intro:nth-of-type(2) .split>div{padding-left:14%;padding-right:6%}.page-mutatieonderhoud main>.intro:nth-of-type(2) figure img{border-radius:8px 0 0 8px}.page-mutatieonderhoud main>.intro:nth-of-type(2) h2{font-size:clamp(23px,2.75vw,38px)}}
+
+/* Tekst die nog intern bevestigd moet worden. */
+.tbc{background:#fff0bc;color:#5c4512;padding:2px 6px;border-radius:4px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
