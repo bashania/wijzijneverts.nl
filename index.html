@@ -33,6 +33,7 @@
   a { color: var(--everts-green); }
   img { max-width: 100%; }
   .evt-show-sm { display: none; }
+  summary::-webkit-details-marker { display: none; }
 
   @media (max-width: 900px) {
     .evt-nav-desktop, .evt-cta-desktop { display: none !important; }
@@ -84,6 +85,7 @@
 <script type="text/babel" src="/js/Pages.jsx"></script>
 <script type="text/babel" src="/js/WatWeDoen.jsx"></script>
 <script type="text/babel" src="/js/Disciplines.jsx"></script>
+<script type="text/babel" src="/js/Opgaven.jsx"></script>
 <script type="text/babel" src="/js/Vacatures.jsx"></script>
 <script type="text/babel">
   const { useState, useEffect } = React;
@@ -103,17 +105,18 @@
       case 'over': view = <Over />; break;
       case 'diensten': view = <Diensten onNav={nav} />; break;
       case 'discipline': view = <DisciplinePage slug={route.slug} onNav={nav} />; break;
+      case 'opgave': view = <OpgavePage slug={route.slug} onNav={nav} />; break;
       case 'werken': view = <Werken onNav={nav} />; break;
       case 'vacature': view = <VacatureDetail slug={route.slug} onNav={nav} />; break;
       case 'solliciteren': view = <Solliciteren slug={route.slug} onNav={nav} />; break;
-      case 'contact': view = <Contact />; break;
+      case 'contact': view = <Contact onderwerp={route.slug} />; break;
       case 'privacy': view = <Privacy onNav={nav} />; break;
       default: view = <Home onNav={nav} />;
     }
 
     // top-nav highlight: vacancy/apply pages count as "werken"
     const current = ['vacature', 'solliciteren'].includes(route.page) ? 'werken'
-      : route.page === 'discipline' ? 'diensten' : route.page;
+      : ['discipline', 'opgave'].includes(route.page) ? 'diensten' : route.page;
 
     return (
       <React.Fragment>

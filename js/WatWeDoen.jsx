@@ -1,4 +1,4 @@
-/* Everts Website — "Wat we doen" landingspagina (overzicht van de vier disciplines) */
+/* Everts Website — "Wat we doen" landingspagina: twee ingangen, eerst de opgaven (Opgaven.jsx), dan de vier disciplines */
 
 const DIENSTEN = [
   { slug: 'schilderwerk', icon: 'paint-roller', kicker: 'Everts. Onderhoud & renovatie',
@@ -63,7 +63,7 @@ function Diensten({ onNav }) {
             <Eyebrow light>Wat we doen</Eyebrow>
             <h1 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: 'clamp(34px,5.4vw,54px)', letterSpacing: '-.02em', lineHeight: 1.03, margin: '0 0 20px', textWrap: 'balance' }}>Vier disciplines, één aanspreekpunt</h1>
             <p style={{ fontSize: 'clamp(17px,2.2vw,20px)', lineHeight: 1.55, color: 'rgba(255,255,255,.92)', margin: '0 0 30px', maxWidth: 560 }}>
-              Schilderwerk, bouwkundig herstel, dakdekken en dagelijks onderhoud. U hoeft niet te schakelen tussen partijen, dat doen wij. Van advies tot oplevering.
+              Renovatie, verduurzaming, mutatieonderhoud en planmatig onderhoud, uitgevoerd door onze vier vakgebieden. U hoeft niet te schakelen tussen partijen, dat doen wij. Van advies tot oplevering.
             </p>
             <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap' }}>
               <Button size="lg" variant="white" iconRight="arrow-right" onClick={() => onNav('contact')}>Maak een afspraak</Button>
@@ -87,8 +87,31 @@ function Diensten({ onNav }) {
         </div>
       </section>
 
+      {/* OPGAVEN: de vraag waarmee een opdrachtgever binnenkomt */}
+      <section style={{ background: '#fff' }}>
+        <div style={{ maxWidth: 1160, margin: '0 auto', padding: '80px clamp(20px,4vw,32px) 72px' }}>
+          <div style={{ maxWidth: 640, marginBottom: 40 }}>
+            <Eyebrow>Uw opgave</Eyebrow>
+            <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 'clamp(26px,3.6vw,36px)', letterSpacing: '-.015em', margin: 0, color: 'var(--fg1)' }}>Waar kunnen we u mee helpen?</h2>
+          </div>
+          <div className="evt-grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 20 }}>
+            {OPGAVEN.filter((o) => o.kaart).map((o) => (
+              <a key={o.slug} href={EVT_URL('opgave', o.slug)} onClick={(e) => { e.preventDefault(); onNav('opgave', o.slug); }}
+                style={{ background: '#fff', border: '1px solid var(--line-200)', borderRadius: 'var(--radius-lg)', boxShadow: 'var(--shadow-md)', padding: 28, display: 'flex', flexDirection: 'column', gap: 14, textDecoration: 'none', transition: 'box-shadow .15s, transform .15s' }}
+                onMouseEnter={(e) => { e.currentTarget.style.boxShadow = 'var(--shadow-lg)'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
+                onMouseLeave={(e) => { e.currentTarget.style.boxShadow = 'var(--shadow-md)'; e.currentTarget.style.transform = 'none'; }}>
+                <span style={{ width: 48, height: 48, borderRadius: 12, background: 'var(--everts-green-100)', color: 'var(--everts-logo-green)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}><Icon name={o.icon} size={24} /></span>
+                <span style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 20, color: 'var(--fg1)' }}>{o.nav}</span>
+                <span style={{ fontSize: 15, lineHeight: 1.6, color: 'var(--fg3)', flex: 1 }}>{o.kaart}</span>
+                <span style={{ display: 'flex', alignItems: 'center', gap: 7, fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: 14, color: 'var(--everts-green)' }}>Lees meer <Icon name="arrow-right" size={15} /></span>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* POSITIONERING + STATS */}
-      <section style={{ background: '#fff', borderBottom: '1px solid var(--line-200)' }}>
+      <section style={{ background: '#fff', borderTop: '1px solid var(--line-200)' }}>
         <div style={{ maxWidth: 1100, margin: '0 auto', padding: '76px clamp(20px,4vw,32px)' }}>
           <div style={{ maxWidth: 720, margin: '0 auto', textAlign: 'center' }}>
             <Eyebrow>Alles onder één dak</Eyebrow>
